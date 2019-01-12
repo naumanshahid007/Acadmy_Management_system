@@ -343,22 +343,70 @@
             <i class="fa fa-dashboard"></i> <span>Home</span>
             </a>
         </li>
+        <li class="treeview">
+          <a href="../index/index.php">
+            <i class="fa fa-dashboard"></i> <span>Manage Admin</span>
+            </a>
+        </li>
+        
         
         <li class="treeview">
           <a href="../../#">
             <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <span>System Settings</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="../../pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="../../pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="../../pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="../../pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Institute</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Branch</a></li>
+            <li><a href="../../pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Groups</a></li>
+            <li><a href="../../pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Classes</a></li>
+            <li><a href="../../pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Subjects</a></li>
+           
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="../../#">
+            <i class="fa fa-laptop"></i>
+            <span>Teacher</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Teacher Personal Info</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Teacher Assign</a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="../../#">
+            <i class="fa fa-laptop"></i>
+            <span>Student</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Student Personal Info</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Student Enrollment</a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="../../#">
+            <i class="fa fa-laptop"></i>
+            <span>Fee</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Fee Vouchar </a></li>
+            
+            
           </ul>
         </li>
         
