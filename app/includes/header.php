@@ -340,12 +340,12 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="../index/index.php">
-            <i class="fa fa-dashboard"></i> <span>Home</span>
+            <i class="fa fa-home"></i> <span>Home</span>
             </a>
         </li>
         <li class="treeview">
           <a href="../index/index.php">
-            <i class="fa fa-dashboard"></i> <span>Manage Admin</span>
+            <i class="fa fa-user"></i> <span>Manage Admin</span>
             </a>
         </li>
         
@@ -359,11 +359,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Institute</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Branch</a></li>
-            <li><a href="../../pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Groups</a></li>
-            <li><a href="../../pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Classes</a></li>
-            <li><a href="../../pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Subjects</a></li>
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-institution"></i> Institute</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-btc"></i> Branch</a></li>
+            <li><a href="../../pages/UI/buttons.html"><i class="fa fa-group"></i> Groups</a></li>
+            <li><a href="../../pages/UI/sliders.html"><i class="fa fa-copyright"></i> Classes</a></li>
+            <li><a href="../../pages/UI/timeline.html"><i class="fa fa-skype"></i> Subjects</a></li>
            
           </ul>
         </li>
@@ -376,35 +376,35 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Teacher Personal Info</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Teacher Assign</a></li>
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Teacher Personal Info</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-at"></i>Teacher Assign</a></li>
             
           </ul>
         </li>
         <li class="treeview">
           <a href="../../#">
-            <i class="fa fa-laptop"></i>
+            <i class="fa fa-users"></i>
             <span>Student</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Student Personal Info</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-circle-o"></i> Student Enrollment</a></li>
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Student Personal Info</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-sign-in"></i> Student Enrollment</a></li>
             
           </ul>
         </li>
         <li class="treeview">
           <a href="../../#">
-            <i class="fa fa-laptop"></i>
+            <i class="fa fa-money"></i>
             <span>Fee</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-circle-o"></i> Fee Vouchar </a></li>
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-money"></i> Fee Vouchar </a></li>
             
             
           </ul>
