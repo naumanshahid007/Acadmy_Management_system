@@ -1,3 +1,7 @@
+<?php 
+
+      include("../includes/connection.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -344,11 +348,7 @@
             <i class="fa fa-home"></i> <span>Home</span>
             </a>
         </li>
-        <li class="treeview">
-          <a href="../index/index.php">
-            <i class="fa fa-user"></i> <span>Manage Admin</span>
-            </a>
-        </li>
+     <li><a href="manage_admin.php"><i class="fa fa-user"></i> <span>Manage Admin</span></a></li>
         
         
         <li class="treeview">
@@ -448,7 +448,7 @@
             <li><a href="../../#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        
+        <li><a href="manage_admin.php"><i class="fa fa-user"></i> <span>Manage Admin</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
