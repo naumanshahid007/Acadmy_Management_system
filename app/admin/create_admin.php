@@ -5,48 +5,73 @@
   <div class="content-wrapper" style="background-color: white;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-       <a href="create_admin.php" class="btn btn-primary">Create Admin</a><br>
-      
+       <h2>Create new Admin</h2>
+      <hr>
     </section>
     
     <!-- Main content -->
     <br><BR>
-    <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+    <div class="container-fluid">
+      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
       <div class="row">
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-4">
           <label>User Name</label>
-          <input type="text" class="form-control" name="username">
+          <input type="text" class="form-control" name="username" placeholder="User Name">
+          <?php 
+            if (isset($err_user)) {
+             echo $err_user;
+            }
+
+          ?>
+          
         </div>
         <div class="col-md-4">
           <label>Password</label>
-          <input type="Password" class="form-control" name="password">
-        </div>
-      </div>
-            <div class="row">
-        <div class="col-md-4 col-md-offset-1">
-          <label>Email</label>
-          <input type="email" class="form-control" name="email">
+          <input type="Password" class="form-control" name="password" placeholder="Password">
         </div>
         <div class="col-md-4">
-          <label>Contact</label>
-          <input type="text" class="form-control" name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
+          <label>Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Email Address">
+          <?php 
+            if (isset($err_email)) {
+             echo $err_email;
+            }
+
+          ?>
+
+
+
+
         </div>
       </div>
-            <div class="row">
-        <div class="col-md-8 col-md-offset-1">
+      <div class="row">
+        <div class="col-md-4">
+          <label>Contact</label>
+          <input type="text" class="form-control" name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask placeholder="Phone No">
+        </div>
+        <div class="col-md-4">
           <label>User Profile</label>
           <input type="file" class="form-control" name="profile">
+          <?php 
+            if (isset($err_pic)) {
+              echo $err_pic;
+            }
+          ?>
+        </div>
+        <div class="col-md-4">
+          
         </div>
       </div><br>
       <div class="row">
-        <div class="col-md-1 col-md-offset-1">
-          <a href="manage_admin.php" class="btn btn-danger">Cancle</a>
+        <div class="col-md-4">
+           <button type="submit" class="btn btn-primary" name="save"> <i class="fa fa-save"></i> Save</button>
+           <a href="manage_admin.php" class="btn btn-danger"><i class="fa fa-times"></i> Cancle</a>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
       </div>
-      <div class="col-md-1">
-          <button type="submit" class="btn btn-primary" name="save">Save</button>
-      </div>
-    </div>
     </form>
+    </div>
 
 
 
@@ -66,39 +91,16 @@
     $ext      = pathinfo($filename, PATHINFO_EXTENSION);
     $size     = $_FILES["profile"]["size"]; 
     $folder   ="uploads/".$filename;
-    if ($username) {
-       $query_show = "SELECT * FROM manage_admin WHERE delete_status = 1 AND username='$username' ";
-       $result1     = mysqli_query($con,$query_show);
-       $row=mysqli_num_rows($result1);
-       if ($row>0) {
-          $err_user="<font style='color:red'>This username is already exist try another one<font>";
-        } 
-        elseif($email){
-
-       $query_show = "SELECT * FROM manage_admin WHERE delete_status = 1 AND email='$email' ";
-       $result1     = mysqli_query($con,$query_show);
-       $row=mysqli_num_rows($result1);
-       if ($row>0) {
-          $err_email="<font style='color:red'>This email is already exist try another one<font>";
-        } 
-        if ($filename) {
-         if (file_exists($filname)) {
-           $err_pic="<font style='color:red'>This file  is already uploaded try another one<font>"; 
-         }
-        }
-        }
-    }
-    else
-    {
+    
     move_uploaded_file($tempname, $folder);
     $query_insert = "INSERT INTO manage_admin(username, password, email,picture,contact) VALUES ('$username','$password','$email','$folder','$contact')";
     $result   = mysqli_query($con,$query_insert);
     if($result)
-    {
-      echo "<script type='text/javascript'>window.location='manage_admin.php'</script>";
-    } 
+      {
+        echo "<script type='text/javascript'>window.location='manage_admin.php'</script>";
+      } 
     }
-  }
+
 
 ?>
     <!-- /.content -->
