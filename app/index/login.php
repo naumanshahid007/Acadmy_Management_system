@@ -41,9 +41,10 @@
                 $sql="SELECT * FROM manage_admin WHERE username='$username' AND password='$password' AND delete_status='1'";
                 $result=mysqli_query($con,$sql);
                 $row=mysqli_num_rows($result);
+                $fetch=mysqli_fetch_assoc($result);
                 if ($row>0) {
                   session_start();
-                  $_SESSION["user_name"]=$username;
+                  $_SESSION["user_name"]=$fetch["admin_id"];
                   echo "<script type='text/javascript'>window.location='../index/index.php'</script>";
                 }
                 else{
