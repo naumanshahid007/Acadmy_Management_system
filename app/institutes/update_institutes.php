@@ -18,25 +18,25 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <label>Institutes Name</label>
-          <input type="text" class="form-control" value="<?php  echo $row['institute_name'] ;?>" name="institute_name">
+          <input required="" type="text" class="form-control" value="<?php  echo $row['institute_name'] ;?>" name="institute_name">
         </div>
         <div class="col-md-4 form-group">
           <label>institute Description</label>
-          <input type="text" class="form-control" value="<?php  echo $row['institute_description'] ;?>"  name="institute_description">
+          <input required="" type="text" class="form-control" value="<?php  echo $row['institute_description'] ;?>"  name="institute_description">
         </div>
         <div class="col-md-4 form-group">
           <label>institute Location</label>
-          <input type="text" class="form-control" value="<?php  echo $row['institute_location'] ;?>"  name="institute_location">
+          <input required="" type="text" class="form-control" value="<?php  echo $row['institute_location'] ;?>"  name="institute_location">
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 form-group">
           <label>Institute Account No</label>
-          <input type="text" class="form-control" value="<?php  echo $row['institute_account_no'] ;?>"  name="institute_account_no">
+          <input required="" type="text" class="form-control" value="<?php  echo $row['institute_account_no'] ;?>"  name="institute_account_no">
         </div>
         <div class="col-md-4 form-group">
           <label>Institutes Profile</label>
-          <input type="file" class="form-control"  name="profile">
+          <input required="" type="file" class="form-control"  name="profile">
         </div>
       </div>
       <?php  }

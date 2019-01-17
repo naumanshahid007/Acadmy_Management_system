@@ -17,7 +17,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <label for="">Group Name</label>
-          <input type="text" name="group_name" class="form-control" placeholder="Enter Name of group">
+          <input type="text" name="group_name" class="form-control" placeholder="Enter Name of group"required="" >
           
         </div>
         <div class="col-md-5">
@@ -32,7 +32,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <label for="">Group Description </label>
-          <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"></textarea>
+          <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"required="" ></textarea>
         </div>
       </div>
       <br>

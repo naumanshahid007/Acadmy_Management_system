@@ -17,25 +17,25 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <label>User Name</label>
-          <input type="text" class="form-control" value="<?php  echo $row['username'] ;?>" name="username">
+          <input type="text" class="form-control" value="<?php  echo $row['username'] ;?>" name="username" required="">
         </div>
         <div class="col-md-4 form-group">
           <label>Password</label>
-          <input type="Password" class="form-control" value="<?php  echo $row['password'] ;?>"  name="password">
+          <input type="Password" class="form-control" value="<?php  echo $row['password'] ;?>"  name="password" required="">
         </div>
         <div class="col-md-4 form-group">
           <label>Email</label>
-          <input type="email" class="form-control" value="<?php  echo $row['email'] ;?>"  name="email">
+          <input type="email" class="form-control" value="<?php  echo $row['email'] ;?>"  name="email" required="">
         </div>
       </div>
     <div class="row">
         <div class="col-md-4 form-group">
           <label>Contact</label>
-          <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
+          <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
         </div>
         <div class="col-md-4 form-group">
           <label>User Profile</label>
-          <input type="file" class="form-control"  name="profile">
+          <input type="file" class="form-control"  name="profile" required="">
         </div>
       </div>
 

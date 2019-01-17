@@ -37,7 +37,7 @@ $id=$_GET["group_id"];
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <label for="">Group Description </label>
-          <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"><?php echo $row["group_description"]; ?></textarea>
+          <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"required=""><?php echo $row["group_description"]; ?></textarea>
         </div>
       </div>
       <br>

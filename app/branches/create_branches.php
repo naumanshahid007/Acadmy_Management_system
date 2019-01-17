@@ -23,41 +23,41 @@
         </div>
         <div class="col-md-4 form-group">
           <label>Branch Name</label>
-          <input type="text" name="branch_name" class="form-control" placeholder="Enter Name Of Branch">
+          <input type="text" name="branch_name" class="form-control" placeholder="Enter Name Of Branch" required="">
         </div>
         <div class="col-md-4 form-group">
           <label>Branch Code</label>
-          <input type="text" name="branch_code" class="form-control" placeholder="Enter Code Of Branch">
+          <input type="text" name="branch_code" class="form-control" placeholder="Enter Code Of Branch" required="">
         </div>
       </div>
      <div class="row">
         <div class="col-md-4 form-group">
           <label>Branch Location</label>
-          <input type="text" name="branch_location" class="form-control" placeholder="Enter branch location">
+          <input type="text" name="branch_location" class="form-control" placeholder="Enter branch location" required="">
           
         </div>
         <div class="col-md-4 form-group">
           <label>Branch Contact No</label>
-          <input type="text" name="branch_contact_no" class="form-control" placeholder="Enter branch contact No">
+          <input type="text" name="branch_contact_no" class="form-control" placeholder="Enter branch contact No" required="">
         </div>
         <div class="col-md-4 form-group">
           <label>Branch Email</label>
-          <input type="email" name="branch_email" class="form-control" placeholder="Enter Email Of branch">
+          <input type="email" name="branch_email" class="form-control" placeholder="Enter Email Of branch" required="">
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 form-group">
           <label for="">Branch Head Name</label>
-          <input type="text" name="branch_head_name" class="form-control" placeholder="Enter branch head name">
+          <input type="text" name="branch_head_name" class="form-control" placeholder="Enter branch head name" required="">
           
         </div>
         <div class="col-md-4" form-group>
           <label>Branch Head Contact No</label>
-          <input type="text" name="branch_head_contact_no" class="form-control" placeholder="Enter head Contact No">
+          <input type="text" name="branch_head_contact_no" class="form-control" placeholder="Enter head Contact No" required="">
         </div>
         <div class="col-md-4" form-group>
           <label>Branch Head Email</label>
-          <input type="email" name="branch_head_email" class="form-control" placeholder="Enter branch head email">
+          <input type="email" name="branch_head_email" class="form-control" placeholder="Enter branch head email" required="">
         </div>
       </div>
       <br>

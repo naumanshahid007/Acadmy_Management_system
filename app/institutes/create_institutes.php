@@ -14,22 +14,22 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <label for="">Institute Name</label>
-          <input type="text" name="institute_name" class="form-control" placeholder="Enter Name of institute">
+          <input type="text" required="" name="institute_name" class="form-control" placeholder="Enter Name of institute">
           
         </div>
         <div class="col-md-4 form-group">
           <label>Institutes Description</label>
-          <input type="text" name="institute_description" class="form-control" placeholder="Enter Description Of Institute">
+          <input type="text" required="" name="institute_description" class="form-control" placeholder="Enter Description Of Institute">
         </div>
         <div class="col-md-4 form-group">
           <label>Institutes Location</label>
-          <input type="text" name="institute_location" class="form-control" placeholder="Enter Location Of Institute">
+          <input type="text" required="" name="institute_location" class="form-control" placeholder="Enter Location Of Institute">
         </div>
       </div>
      <div class="row">
         <div class="col-md-4 form-group">
           <label for="">Institute Picture</label>
-          <input type="file" name="profile" class="form-control" placeholder="Enter Npicture of institute">
+          <input type="file" name="profile" class="form-control" placeholder="Enter Npicture of institute" required="">
           
         </div>
         <div class="col-md-4 form-group">
