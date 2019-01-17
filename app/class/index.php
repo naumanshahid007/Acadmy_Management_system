@@ -4,7 +4,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-    <h2>lass</h2>
+    <h2>Class</h2>
     <hr>
     <section class="content-header">
        <a href="create_class.php" class="btn btn-primary">Create class</a><br>
