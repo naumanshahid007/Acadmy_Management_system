@@ -12,8 +12,8 @@
     <!-- Main content -->
     <br><BR>
     <?php
-    $id = $_GET["admin_id"];
-      $query  = "SELECT * FROM manage_admin WHERE admin_id = $id ";
+    $id = $_GET["institute_id"];
+      $query  = "SELECT * FROM institutes WHERE institute_id = $id ";
       $res    = mysqli_query($con,$query);
       while ($row = mysqli_fetch_array($res)) { ?>
        
@@ -21,34 +21,33 @@
     <form method="POST" enctype="multipart/form-data" style="background-color: white;">
       <div class="row">
         <div class="col-md-4">
-          <label>User Name</label>
-          <input type="text" class="form-control" value="<?php  echo $row['username'] ;?>" name="username">
+          <label>Institutes Name</label>
+          <input type="text" class="form-control" value="<?php  echo $row['institute_name'] ;?>" name="institute_name">
         </div>
         <div class="col-md-4">
-          <label>Password</label>
-          <input type="Password" class="form-control" value="<?php  echo $row['password'] ;?>"  name="password">
+          <label>institute Description</label>
+          <input type="text" class="form-control" value="<?php  echo $row['institute_description'] ;?>"  name="institute_description">
         </div>
         <div class="col-md-4">
-          <label>Email</label>
-          <input type="email" class="form-control" value="<?php  echo $row['email'] ;?>"  name="email">
+          <label>institute Location</label>
+          <input type="text" class="form-control" value="<?php  echo $row['institute_location'] ;?>"  name="institute_location">
         </div>
       </div>
-    <div class="row">
+      <div class="row">
         <div class="col-md-4">
-          <label>Contact</label>
-          <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
+          <label>Institute Account No</label>
+          <input type="text" class="form-control" value="<?php  echo $row['institute_account_no'] ;?>"  name="institute_account_no">
         </div>
         <div class="col-md-4">
-          <label>User Profile</label>
+          <label>Institutes Profile</label>
           <input type="file" class="form-control"  name="profile">
         </div>
       </div>
-
       <?php  }
     ?><br>
       <div class="row">
-        <div class="col-md-1 col-md-offset-1">
-          <a href="manage_admin.php" class="btn btn-danger">Cancle</a>
+        <div class="col-md-1 ">
+          <a href="index.php" class="btn btn-danger">Cancle</a>
       </div>
       <div class="col-md-1">
           <button type="submit" class="btn btn-primary" name="update">Update</button>
@@ -58,10 +57,10 @@
 <?php
   if(isset($_POST["update"]))
   {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $email    = $_POST["email"];
-    $contact  = $_POST["contact"];
+    $institute_name  = $_POST["institute_name"];
+    $institute_description = $_POST["institute_description"];
+    $institute_location    = $_POST["institute_location"];
+    $institute_account_no  = $_POST["institute_account_no"];
     $filename = $_FILES["profile"]['name'];
     $tempname = $_FILES["profile"]['tmp_name'];
     $ext      = pathinfo($filename, PATHINFO_EXTENSION);
@@ -71,20 +70,20 @@
       move_uploaded_file($tempname, $folder);
     
 
-    $query_update = " UPDATE manage_admin SET username='$username',password='$password',email='$email',picture='$folder',contact='$contact' WHERE admin_id = $id ";
+    $query_update = " UPDATE institutes SET institute_name='$institute_name',institute_description='$institute_description',institute_location='$institute_location',institute_picture='$folder',institute_account_no='$institute_account_no' WHERE institute_id = $id ";
     $result   = mysqli_query($con,$query_update);
     if($result)
     {
-      echo "<script type='text/javascript'>window.location='manage_admin.php'</script>";
+      echo "<script type='text/javascript'>window.location='index.php'</script>";
     }
  }
  else
  {
-   $query_update = " UPDATE manage_admin SET username='$username',password='$password',email='$email',contact='$contact' WHERE admin_id = $id ";
+   $query_update = " UPDATE institutes SET institute_name='$institute_name',institute_description='$institute_description',institute_location='$institute_location',institute_account_no='$institute_account_no' WHERE institute_id = $id ";
     $result   = mysqli_query($con,$query_update);
     if($result)
     {
-     echo "<script type='text/javascript'>window.location='manage_admin.php'</script>";
+     echo "<script type='text/javascript'>window.location='index.php'</script>";
     }
  }
   }
