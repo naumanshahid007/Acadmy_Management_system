@@ -45,10 +45,14 @@
                   //Query
                   $class = "SELECT * FROM classes ";
                   $classResult     = mysqli_query($con,$class);
-                  while($classes = mysqli_fetch_array($classResult)){ ?>
-              
-                <option value="<?php echo $classes['class_id']; ?>"><?php echo $classes['class_name'];?></option>
-               <?php
+                  while($classes = mysqli_fetch_array($classResult)){ 
+                  if ($class_id!=$classes['class_id']) {
+                    ?>
+                    <option value="<?php echo $classes['class_id']; ?>"><?php echo $classes['class_name']; ?> </option>
+                    <?php
+                  }
+               
+               
               }
             ?>
             
@@ -88,8 +92,8 @@
     $updated_at=date("d/m/Y");
     
     
-    $query_insert = "UPDATE subjects SET subject_name='$subject_name',subject_fee='$subject_fee',class_id='$class_id',updated_at='$updated_at',updated_by='$user',subject_description='$subject_description' WHERE subject_id='id'";
-    echo $query_insert;die();
+    $query_insert = "UPDATE subjects SET subject_name='$subject_name',subject_fee='$subject_fee',class_id='$class_id',updated_at='$updated_at',updated_by='$user',subject_description='$subject_description' WHERE subject_id='$id'";
+  
     $result   = mysqli_query($con,$query_insert);
     if($result)
       {

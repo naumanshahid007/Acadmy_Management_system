@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-4">
           <label for=""> Subject Name</label>
-          <input type="text" class="form-control" name="subject_name" required="" placeholder="Enter Subject Name" required="" autofocus="">
+          <input type="text" class="form-control" name="subject_name" required="" placeholder="Enter Subject Name" required="" autofocus="" required="">
         </div>
         <div class="col-md-4">
           <label for=""> Subject Fee</label>
@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-md-4">
           <label for=""> Subject Description</label>
-          <textarea name="subject_description" class="form-control" rows="5" placeholder="Enter description  of subject"></textarea>
+          <textarea name="subject_description" class="form-control" rows="5" placeholder="Enter description  of subject" required=""></textarea>
           <br>
         </div>
         

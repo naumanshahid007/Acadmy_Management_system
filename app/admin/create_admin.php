@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-md-4">
           <label>User Name</label>
-          <input type="text" class="form-control" name="username" placeholder="User Name">
+          <input type="text" class="form-control" name="username" placeholder="User Name" required="">
           <?php 
             if (isset($err_user)) {
              echo $err_user;
@@ -27,11 +27,11 @@
         </div>
         <div class="col-md-4">
           <label>Password</label>
-          <input type="Password" class="form-control" name="password" placeholder="Password">
+          <input required="" type="Password" class="form-control" name="password" placeholder="Password">
         </div>
         <div class="col-md-4">
           <label>Email</label>
-          <input type="email" class="form-control" name="email" placeholder="Email Address">
+          <input type="email" required="" class="form-control" name="email" placeholder="Email Address">
           <?php 
             if (isset($err_email)) {
              echo $err_email;
@@ -47,11 +47,11 @@
       <div class="row">
         <div class="col-md-4">
           <label>Contact</label>
-          <input type="text" class="form-control" name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask placeholder="Phone No">
+          <input type="text" class="form-control" name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask placeholder="Phone No" required="">
         </div>
         <div class="col-md-4">
           <label>User Profile</label>
-          <input type="file" class="form-control" name="profile">
+          <input type="file" class="form-control" name="profile" required="">
           <?php 
             if (isset($err_pic)) {
               echo $err_pic;

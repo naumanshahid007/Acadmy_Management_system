@@ -17,9 +17,9 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <label for="">class Name</label>
-          <input type="text" name="class_name" class="form-control" placeholder="Enter Name of class">
+          <input type="text" name="class_name" required="" class="form-control" placeholder="Enter Name of class">
            <label for="">class Description </label>
-          <textarea name="class_description" class="form-control" placeholder=" class Description " rows="5"></textarea>
+          <textarea name="class_description" required="" class="form-control" placeholder=" class Description " rows="5"></textarea>
           
         </div>
         
