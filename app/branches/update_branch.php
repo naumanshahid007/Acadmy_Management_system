@@ -12,8 +12,8 @@
     <!-- Main content -->
     <br><BR>
     <?php
-    $id = $_GET["admin_id"];
-      $query  = "SELECT * FROM manage_admin WHERE admin_id = $id ";
+    $id = $_GET["branch_id"];
+      $query  = "SELECT * FROM branches WHERE branch_id = $id ";
       $res    = mysqli_query($con,$query);
       while ($row = mysqli_fetch_array($res)) { ?>
        
@@ -21,34 +21,62 @@
     <form method="POST" enctype="multipart/form-data" style="background-color: white;">
       <div class="row">
         <div class="col-md-4">
-          <label>User Name</label>
-          <input type="text" class="form-control" value="<?php  echo $row['username'] ;?>" name="username">
+          <label>Institute Name</label>
+          <select class="form-control" name="institute_name">
+            <?php
+              $query_institute = " SELECT * FROM institutes WHERE delete_status = 1 ";
+              $result = mysqli_query($con,$query_institute);
+              while($opt = mysqli_fetch_array($result))
+              {?>
+                  <option value="<?php echo $opt["institute_id"]; ?>"><?php echo $opt["institute_name"]; ?></option>
+            <?php  }
+            ?>
+          </select>
         </div>
         <div class="col-md-4">
-          <label>Password</label>
-          <input type="Password" class="form-control" value="<?php  echo $row['password'] ;?>"  name="password">
+          <label>Branch Name</label>
+          <input type="text" name="branch_name" value="<?php echo $row["branch_name"]; ?>" class="form-control" placeholder="Enter Name Of Branch">
         </div>
         <div class="col-md-4">
-          <label>Email</label>
-          <input type="email" class="form-control" value="<?php  echo $row['email'] ;?>"  name="email">
+          <label>Branch Code</label>
+          <input type="text" name="branch_code" value="<?php echo $row["branch_code"]; ?>" class="form-control" placeholder="Enter Code Of Branch">
         </div>
       </div>
-    <div class="row">
+     <div class="row">
         <div class="col-md-4">
-          <label>Contact</label>
-          <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
+          <label>Branch Location</label>
+          <input type="text" name="branch_location" value="<?php echo $row["branch_location"]; ?>" class="form-control" placeholder="Enter branch location">
+          
         </div>
         <div class="col-md-4">
-          <label>User Profile</label>
-          <input type="file" class="form-control"  name="profile">
+          <label>Branch Contact No</label>
+          <input type="text" name="branch_contact_no" value="<?php echo $row["branch_contact_no"]; ?>" class="form-control" placeholder="Enter branch contact No">
+        </div>
+        <div class="col-md-4">
+          <label>Branch Email</label>
+          <input type="email" name="branch_email" value="<?php echo $row["branch_email"]; ?>" class="form-control" placeholder="Enter Email Of branch">
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">Branch Head Name</label>
+          <input type="text" name="branch_head_name" value="<?php echo $row["branch_head_name"]; ?>" class="form-control" placeholder="Enter branch head name">
+          
+        </div>
+        <div class="col-md-4">
+          <label>Branch Head Contact No</label>
+          <input type="text" name="branch_head_contact_no" value="<?php echo $row["branch_head_contact_no"]; ?>" class="form-control" placeholder="Enter head Contact No">
+        </div>
+        <div class="col-md-4">
+          <label>Branch Head Email</label>
+          <input type="email" name="branch_head_email" value="<?php echo $row["branch_head_email"]; ?>" class="form-control" placeholder="Enter branch head email">
+        </div>
+      </div>
       <?php  }
     ?><br>
       <div class="row">
-        <div class="col-md-1 col-md-offset-1">
-          <a href="manage_admin.php" class="btn btn-danger">Cancle</a>
+        <div class="col-md-1 ">
+          <a href="index.php" class="btn btn-danger">Cancle</a>
       </div>
       <div class="col-md-1">
           <button type="submit" class="btn btn-primary" name="update">Update</button>
@@ -58,36 +86,29 @@
 <?php
   if(isset($_POST["update"]))
   {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $email    = $_POST["email"];
-    $contact  = $_POST["contact"];
-    $filename = $_FILES["profile"]['name'];
-    $tempname = $_FILES["profile"]['tmp_name'];
-    $ext      = pathinfo($filename, PATHINFO_EXTENSION);
-    $size     = $_FILES["profile"]["size"]; 
-    $folder   ="uploads/".$filename;
-    if ($filename) {
-      move_uploaded_file($tempname, $folder);
-    
+    $institute_name        = $_POST["institute_name"];
+    $branch_name           = $_POST["branch_name"];
+    $branch_code           = $_POST["branch_code"];
+    $branch_location       = $_POST["branch_location"];
+    $branch_contact_no     = $_POST["branch_contact_no"];
+    $branch_email          = $_POST["branch_email"];
+    $branch_head_name      = $_POST["branch_head_name"];
+    $branch_head_contact_no = $_POST["branch_head_contact_no"];
+    $branch_head_email     = $_POST["branch_head_email"];
 
-    $query_update = " UPDATE manage_admin SET username='$username',password='$password',email='$email',picture='$folder',contact='$contact' WHERE admin_id = $id ";
+   $query_update = "  UPDATE `branches` SET `institute_id`='$institute_name',`branch_name`='$branch_name',`branch_code`='$branch_code',`branch_location`='$branch_location',`branch_contact_no`='$branch_contact_no',`branch_email`='$branch_email',`branch_head_name`='$branch_head_name',`branch_head_contact_no`='$branch_head_contact_no',`branch_head_email`='$branch_head_email' WHERE branch_id = '$id' ";
+   
+
+
+
+
     $result   = mysqli_query($con,$query_update);
     if($result)
     {
-      echo "<script type='text/javascript'>window.location='manage_admin.php'</script>";
+     echo "<script type='text/javascript'>window.location='index.php'</script>";
     }
  }
- else
- {
-   $query_update = " UPDATE manage_admin SET username='$username',password='$password',email='$email',contact='$contact' WHERE admin_id = $id ";
-    $result   = mysqli_query($con,$query_update);
-    if($result)
-    {
-     echo "<script type='text/javascript'>window.location='manage_admin.php'</script>";
-    }
- }
-  }
+  
 
 ?>
     <!-- /.content -->
