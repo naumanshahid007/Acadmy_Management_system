@@ -341,15 +341,13 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="header" style="text-align: center;">MAIN NAVIGATION</li>
+        <li>
           <a href="../index/index.php">
             <i class="fa fa-home"></i> <span>Home</span>
-            </a>
+          </a> 
         </li>
      <li><a href="../admin/manage_admin.php"><i class="fa fa-user"></i> <span>Manage Admin</span></a></li>
-        
-        
         <li class="treeview">
           <a href="../../#">
             <i class="fa fa-laptop"></i>

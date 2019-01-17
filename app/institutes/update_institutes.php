@@ -3,42 +3,38 @@
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <br>
-      
-    </section>
-    
+   
     <!-- Main content -->
-    <br><BR>
+    
     <?php
     $id = $_GET["institute_id"];
       $query  = "SELECT * FROM institutes WHERE institute_id = $id ";
       $res    = mysqli_query($con,$query);
       while ($row = mysqli_fetch_array($res)) { ?>
        
-    
-    <form method="POST" enctype="multipart/form-data" style="background-color: white;">
+    <div class="container">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Institute</h3><br>
+    <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institutes Name</label>
           <input type="text" class="form-control" value="<?php  echo $row['institute_name'] ;?>" name="institute_name">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>institute Description</label>
           <input type="text" class="form-control" value="<?php  echo $row['institute_description'] ;?>"  name="institute_description">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>institute Location</label>
           <input type="text" class="form-control" value="<?php  echo $row['institute_location'] ;?>"  name="institute_location">
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institute Account No</label>
           <input type="text" class="form-control" value="<?php  echo $row['institute_account_no'] ;?>"  name="institute_account_no">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institutes Profile</label>
           <input type="file" class="form-control"  name="profile">
         </div>
@@ -46,14 +42,13 @@
       <?php  }
     ?><br>
       <div class="row">
-        <div class="col-md-1 ">
-          <a href="index.php" class="btn btn-danger">Cancle</a>
-      </div>
-      <div class="col-md-1">
-          <button type="submit" class="btn btn-primary" name="update">Update</button>
+        <div class="col-md-4 ">
+          <button type="submit" class="btn btn-primary" name="update"><i class="glyphicon glyphicon-ok"></i> Update</button> &nbsp;
+          <a href="index.php" class="btn btn-danger"><i class="glyphicon glyphicon-remove" ></i> Cancle</a>
       </div>
     </div>
     </form>
+  </div>
 <?php
   if(isset($_POST["update"]))
   {

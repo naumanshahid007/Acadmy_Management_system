@@ -4,17 +4,13 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-    <h2>Create New Admin</h2>
-    <hr>
-    <section class="content-header">
-       <a href="create_admin.php" class="btn btn-primary">Create Admin</a><br>
-      
-    </section>
+    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">Admin Details</h3>
     
     <!-- Main content -->
     
-    <br><BR><div class="box-body well">
-    <table id="example1" class="table table-bordered table-striped">
+    <div class="box-body well" style="border-top:1px solid #3c8dbc;">
+      <a href="create_admin.php" class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Admin</a><br><hr>
+    <table id="example1" class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
                   <th>User Name</th>
@@ -34,8 +30,11 @@
                     <td><?php error_reporting(0); echo $row['email'] ;?></td>
                     <td><?php error_reporting(0); echo $row['contact'] ;?></td>
                     <td> <a href="<?php  echo $row['picture'];?>"><img src="<?php  echo $row['picture'];?>" class="img-circle" width="50px" height="50px"></a></td>
-                    <td><a href="update_admin.php?admin_id=<?php echo $row['admin_id'];?>" class="label label-info">Update</a>
-                      <a href="deleteadmin.php?admin_id=<?php echo $row['admin_id'];?>" class="label label-danger" onclick="return confirm('Are you sure to delete this admin');">Delete</a></td>
+                    <td>
+                      <a href="update_admin.php?admin_id=<?php echo $row['admin_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+
+                      <a href="deleteadmin.php?admin_id=<?php echo $row['admin_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this admin');"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                    </td>
                   </tr>
                   <?php
                 }

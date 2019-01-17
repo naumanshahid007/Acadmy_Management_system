@@ -2,19 +2,13 @@
 ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Create new Branch</h2>
-      <hr>
-    </section>
-    
+  <div class="content-wrapper">
     <!-- Main content -->
-    <br><BR>
-    <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+    <div class="container">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00a65a; color: white; text-align: center;">Create New Branch</h3>
+      <form method="POST" enctype="multipart/form-data"  class="well" style="border-top:1px solid #00a65a;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institute Name</label>
           <select class="form-control" name="institute_name">
             <?php
@@ -27,50 +21,51 @@
             ?>
           </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Name</label>
           <input type="text" name="branch_name" class="form-control" placeholder="Enter Name Of Branch">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Code</label>
           <input type="text" name="branch_code" class="form-control" placeholder="Enter Code Of Branch">
         </div>
       </div>
      <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Location</label>
           <input type="text" name="branch_location" class="form-control" placeholder="Enter branch location">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Contact No</label>
           <input type="text" name="branch_contact_no" class="form-control" placeholder="Enter branch contact No">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Email</label>
           <input type="email" name="branch_email" class="form-control" placeholder="Enter Email Of branch">
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for="">Branch Head Name</label>
           <input type="text" name="branch_head_name" class="form-control" placeholder="Enter branch head name">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" form-group>
           <label>Branch Head Contact No</label>
           <input type="text" name="branch_head_contact_no" class="form-control" placeholder="Enter head Contact No">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" form-group>
           <label>Branch Head Email</label>
           <input type="email" name="branch_head_email" class="form-control" placeholder="Enter branch head email">
         </div>
       </div>
       <br>
       <div class="row">
-        <div class="col-md-1"></div>
-        <button type="submit" class="btn btn-info" name="submit"><i  class="fa fa-plus-square"></i> Add Group</button>
-        <a href="index.php" title="Go to main page" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+        <div class="col-md-4">
+        <button type="submit" class="btn btn-primary" name="submit"><i class="glyphicon glyphicon-save"></i> Save</button>&nbsp;
+        <a href="index.php" title="Go to main page" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+        </div>
       </div>
     </form>
     </div>

@@ -2,43 +2,38 @@
       
 ?>
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <br>
-      
-    </section>
-    
+  <div class="content-wrapper" >
     <!-- Main content -->
-    <br><BR>
+
     <?php
     $id = $_GET["admin_id"];
       $query  = "SELECT * FROM manage_admin WHERE admin_id = $id ";
       $res    = mysqli_query($con,$query);
       while ($row = mysqli_fetch_array($res)) { ?>
        
-    
-    <form method="POST" enctype="multipart/form-data" style="background-color: white;">
+    <div class="container">
+       <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Admin</h3><br>
+    <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>User Name</label>
           <input type="text" class="form-control" value="<?php  echo $row['username'] ;?>" name="username">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Password</label>
           <input type="Password" class="form-control" value="<?php  echo $row['password'] ;?>"  name="password">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Email</label>
           <input type="email" class="form-control" value="<?php  echo $row['email'] ;?>"  name="email">
         </div>
       </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Contact</label>
           <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>User Profile</label>
           <input type="file" class="form-control"  name="profile">
         </div>
@@ -47,14 +42,14 @@
       <?php  }
     ?><br>
       <div class="row">
-        <div class="col-md-1 col-md-offset-1">
-          <a href="manage_admin.php" class="btn btn-danger">Cancle</a>
-      </div>
-      <div class="col-md-1">
-          <button type="submit" class="btn btn-primary" name="update">Update</button>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary" name="update">
+            <i class="glyphicon glyphicon-ok"></i> Update</button> &nbsp;
+          <a href="manage_admin.php" class="btn btn-danger"> <i class="glyphicon glyphicon-remove"></i>   Cancle</a>
       </div>
     </div>
     </form>
+  </div>
 <?php
   if(isset($_POST["update"]))
   {

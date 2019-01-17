@@ -4,46 +4,45 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="background-color: white;">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Create new Institutes</h2>
-      <hr>
-    </section>
+   
     
     <!-- Main content -->
-    <br><BR>
-    <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+    
+    <div class="container">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00a65a; color: white; text-align: center;">Create New Institute</h3><br>
+      <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00a65a;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for="">Institute Name</label>
           <input type="text" name="institute_name" class="form-control" placeholder="Enter Name of institute">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institutes Description</label>
           <input type="text" name="institute_description" class="form-control" placeholder="Enter Description Of Institute">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institutes Location</label>
           <input type="text" name="institute_location" class="form-control" placeholder="Enter Location Of Institute">
         </div>
       </div>
      <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for="">Institute Picture</label>
           <input type="file" name="profile" class="form-control" placeholder="Enter Npicture of institute">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institutes Account No</label>
           <input type="text" name="institute_account_no" class="form-control" placeholder="Enter Description Of Institute">
         </div>
       </div>
       <br>
       <div class="row">
-        <div class="col-md-1"></div>
-        <button type="submit" class="btn btn-info" name="submit"><i  class="fa fa-plus-square"></i> Add Group</button>
-        <a href="index.php" title="Go to main page" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-info" name="submit">  <i class="glyphicon glyphicon-save"></i> Save</button>&nbsp;
+        <a href="index.php" title="Go to main page" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+        </div>
       </div>
     </form>
     </div>

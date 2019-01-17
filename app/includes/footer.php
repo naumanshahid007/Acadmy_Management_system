@@ -1,7 +1,4 @@
 
-
-
-
 <!-- jQuery UI 1.11.4 -->
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -126,22 +123,6 @@
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
 
 
@@ -161,5 +142,6 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+
 </body>
 </html>

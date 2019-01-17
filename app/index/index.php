@@ -12,11 +12,15 @@
         <li><a href="../../#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
+
     </section>
 
     <!-- Main content -->
-   
+    <div class="container-fluid">
+      <h1>DEXDEVS</h1>
+    </div>
     <!-- /.content -->
+    
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

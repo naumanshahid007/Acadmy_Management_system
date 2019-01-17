@@ -2,25 +2,20 @@
       
 ?>
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <br>
-      
-    </section>
-    
+  <div class="content-wrapper">
+   
     <!-- Main content -->
-    <br><BR>
     <?php
     $id = $_GET["branch_id"];
       $query  = "SELECT * FROM branches WHERE branch_id = $id ";
       $res    = mysqli_query($con,$query);
       while ($row = mysqli_fetch_array($res)) { ?>
        
-    
-    <form method="POST" enctype="multipart/form-data" style="background-color: white;">
+    <div class="container">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Branch</h3><br>
+    <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Institute Name</label>
           <select class="form-control" name="institute_name">
             <?php
@@ -33,41 +28,41 @@
             ?>
           </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Name</label>
           <input type="text" name="branch_name" value="<?php echo $row["branch_name"]; ?>" class="form-control" placeholder="Enter Name Of Branch">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Code</label>
           <input type="text" name="branch_code" value="<?php echo $row["branch_code"]; ?>" class="form-control" placeholder="Enter Code Of Branch">
         </div>
       </div>
      <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Location</label>
           <input type="text" name="branch_location" value="<?php echo $row["branch_location"]; ?>" class="form-control" placeholder="Enter branch location">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Contact No</label>
           <input type="text" name="branch_contact_no" value="<?php echo $row["branch_contact_no"]; ?>" class="form-control" placeholder="Enter branch contact No">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Email</label>
           <input type="email" name="branch_email" value="<?php echo $row["branch_email"]; ?>" class="form-control" placeholder="Enter Email Of branch">
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for="">Branch Head Name</label>
           <input type="text" name="branch_head_name" value="<?php echo $row["branch_head_name"]; ?>" class="form-control" placeholder="Enter branch head name">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Head Contact No</label>
           <input type="text" name="branch_head_contact_no" value="<?php echo $row["branch_head_contact_no"]; ?>" class="form-control" placeholder="Enter head Contact No">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label>Branch Head Email</label>
           <input type="email" name="branch_head_email" value="<?php echo $row["branch_head_email"]; ?>" class="form-control" placeholder="Enter branch head email">
         </div>
@@ -75,14 +70,13 @@
       <?php  }
     ?><br>
       <div class="row">
-        <div class="col-md-1 ">
-          <a href="index.php" class="btn btn-danger">Cancle</a>
-      </div>
-      <div class="col-md-1">
-          <button type="submit" class="btn btn-primary" name="update">Update</button>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary" name="update"><i class="glyphicon glyphicon-ok"></i> Update</button>&nbsp;
+          <a href="index.php" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancle</a>
       </div>
     </div>
     </form>
+  </div>
 <?php
   if(isset($_POST["update"]))
   {

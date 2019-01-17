@@ -4,27 +4,22 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-    <h2>Create New Branches</h2>
-    <hr>
-    <section class="content-header">
-       <a href="create_branches.php" class="btn btn-primary">Create Branches</a><br>
-      
-    </section>
+    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">Branch Details</h3>
     
     <!-- Main content -->
-    
-    <br><BR><div class="box-body well">
+  <div class="box-body well" style="border-top:1px solid #3c8dbc;">
+       <a href="create_branches.php" class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Branch</a><br><hr>
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Institute Id</th>
+             
                   <th>Branch Name</th>
                   <th>Branch Code</th>
                   <th>Branch Location</th>
                   <th>Branch Contact No</th>
                   <th>Branch Email</th>
                   <th>Branch Head Name</th>
-                  <th>Branch Head Contact No</th>
+                  <th>Br. Head Contact No</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -34,7 +29,6 @@
                 $result     = mysqli_query($con,$query_show);
                 while ($row = mysqli_fetch_array($result)) { ?>
                   <tr>
-                    <td><?php error_reporting(0); echo $row['institute_id'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_name'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_code'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_location'] ;?></td>
@@ -42,26 +36,17 @@
                     <td><?php error_reporting(0); echo $row['branch_email'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_head_name'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_head_contact_no'] ;?></td>
-                    <td><a href="update_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="label label-info">Update</a>
-                      <a href="delete_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="label label-danger" onclick="return confirm('Are you sure to delete this institute');">Delete</a></td>
+                    <td>
+                      <a href="update_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+
+                      <a href="delete_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this institute');"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                    </td>
                   </tr>
                   <?php
                 }
                ?>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Institute Id</th>
-                  <th>Branch Name</th>
-                  <th>Branch Code</th>
-                  <th>Branch Location</th>
-                  <th>Branch Contact No</th>
-                  <th>Branch Email</th>
-                  <th>Branch Head Name</th>
-                  <th>Branch Head Contact No</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
+                
               </table>
               </div>
           </div>
