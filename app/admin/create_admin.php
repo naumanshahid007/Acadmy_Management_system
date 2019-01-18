@@ -1,11 +1,10 @@
-<<<<<<< HEAD
   <?php include("../includes/header.php"); 
   ?>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="background-color: white;">
+    <div class="content-wrapper">
       <!-- Main content -->
-      <div class="container">
+      <div class="container-fluid">
         <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00a65a; color: white; text-align: center;">Create New Admin</h3><br>
         <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00a65a;">
         <div class="row" >
@@ -34,67 +33,6 @@
 
             ?>
           </div>
-=======
-<?php include("../includes/header.php"); 
-?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Create new Admin</h2>
-      <hr>
-    </section>
-    
-    <!-- Main content -->
-    <br><BR>
-    <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
-      <div class="row">
-        <div class="col-md-4">
-          <label>User Name</label>
-          <input type="text" class="form-control" name="username" placeholder="User Name" required="">
-          <?php 
-            if (isset($err_user)) {
-             echo $err_user;
-            }
-
-          ?>
-          
-        </div>
-        <div class="col-md-4">
-          <label>Password</label>
-          <input required="" type="Password" class="form-control" name="password" placeholder="Password">
-        </div>
-        <div class="col-md-4">
-          <label>Email</label>
-          <input type="email" required="" class="form-control" name="email" placeholder="Email Address">
-          <?php 
-            if (isset($err_email)) {
-             echo $err_email;
-            }
-
-          ?>
-
-
-
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <label>Contact</label>
-          <input type="text" class="form-control" name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask placeholder="Phone No" required="">
-        </div>
-        <div class="col-md-4">
-          <label>User Profile</label>
-          <input type="file" class="form-control" name="profile" required="">
-          <?php 
-            if (isset($err_pic)) {
-              echo $err_pic;
-            }
-          ?>
->>>>>>> 32d7723ea6a5df8903d566d9f7744de7a4d6bddb
         </div>
         <div class="row">
           <div class="col-md-4 form-group">
@@ -149,25 +87,6 @@
 
 
   ?>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
-      </div>
-      <strong>Copyright &copy; 2014-2016 <a href="http://dexdevs.com/">DEXDEVS</a>.</strong> All rights
-      reserved.
-    </footer>
-
-    <!-- Control Sidebar -->
-    
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-  </div>
-  <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
   <?php include"../includes/footer.php"; ?>
