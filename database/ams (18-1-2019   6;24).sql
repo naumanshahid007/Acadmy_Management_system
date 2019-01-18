@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2019 at 12:48 PM
+-- Generation Time: Jan 18, 2019 at 02:24 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -51,7 +51,7 @@ CREATE TABLE `branches` (
   `branch_id` int(11) NOT NULL,
   `institute_id` int(111) NOT NULL,
   `branch_name` varchar(111) NOT NULL,
-  `branch _code` varchar(111) NOT NULL,
+  `branch_code` varchar(111) NOT NULL,
   `branch_location` varchar(111) NOT NULL,
   `branch_contact_no` varchar(111) NOT NULL,
   `branch_email` varchar(111) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `branches` (
 -- Dumping data for table `branches`
 --
 
-INSERT INTO `branches` (`branch_id`, `institute_id`, `branch_name`, `branch _code`, `branch_location`, `branch_contact_no`, `branch_email`, `branch_status`, `branch_head_name`, `branch_head_contact_no`, `branch_head_email`, `delete_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+INSERT INTO `branches` (`branch_id`, `institute_id`, `branch_name`, `branch_code`, `branch_location`, `branch_contact_no`, `branch_email`, `branch_status`, `branch_head_name`, `branch_head_contact_no`, `branch_head_email`, `delete_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 (1, 1, 'gulshin', '068', 'Gulshin Iqbal', '03006999824', 'saif@gmail.com', 'Active', 'sir faraz', '03006999824', 'farazahmad@gmail.com', 1, 2, 2, '2019-01-17 13:01:22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -285,6 +285,13 @@ CREATE TABLE `teacher_personal_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `teacher_personal_info`
+--
+
+INSERT INTO `teacher_personal_info` (`teacher_id`, `teacher_name`, `teacher_father_name`, `teacher_cnic`, `teacher_email`, `teacher_contact_no`, `teacher_gender`, `teacher_picture`, `teacher_permanent_address`, `teacher_qualification`, `teacher_marital_status`, `delete_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'ADMIN', '032210022333', 'admin@gmail.com', '0321545521445', 'Male', 'uploads/45321.jpg', 'gulshin Iqbal', 'M ED', 'Married', 1, 0, 0, '2019-01-18 13:05:05', '0000-00-00 00:00:00');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -420,7 +427,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `teacher_personal_info`
 --
 ALTER TABLE `teacher_personal_info`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

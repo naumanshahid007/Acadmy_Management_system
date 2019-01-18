@@ -8,19 +8,15 @@ $id=$_GET["group_id"];
 ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Update Group</h2>
-      <hr>
-    </section>
+  <div class="content-wrapper">
     
     <!-- Main content -->
-    <br><BR>
+
     <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Group</h3><br>
+      <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for="">Class</label>
           <?php 
             $clas=mysqli_query($con,"SELECT * FROM classes WHERE class_id=$class_id");
@@ -47,12 +43,12 @@ $id=$_GET["group_id"];
           </select>
         </div>
         
-        <div class="col-md-4">
+        <div class="col-md-4" form-group>
           <label for="">Group Name</label>
           <input type="text" name="group_name" class="form-control" placeholder="Enter Name of group" value="<?php echo $row['group_name']; ?>">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" form-group>
           <label for="">Group Type</label>
           <select name="group_type" class="form-control">
             <option value='<?php echo $row["group_type"]; ?>'><?php echo $row["group_type"]; ?></option>
@@ -70,16 +66,18 @@ $id=$_GET["group_id"];
       </div>
       <div class="row">
         
-        <div class="col-md-4">
+        <div class="col-md-4" form-group>
           <label for="">Group Description </label>
           <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"required=""><?php echo $row["group_description"]; ?></textarea>
         </div>
+
       </div>
       <br>
       <div class="row">
-        <div class="col-md-1"></div>
-        <button type="submit" class="btn btn-info" name="submit"><i  class="fa fa-save"></i> Update Group</button>
-        <a href="index.php" title="Go to main page" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+        <div class="col-md-4">
+        <button type="submit" class="btn btn-primary" name="submit"><i class="glyphicon glyphicon-ok"></i> Update</button>&nbsp;
+        <a href="index.php" title="Go to main page" class="btn btn-danger"> <i class="glyphicon glyphicon-remove"></i> Cancel</a>
+        </div>
       </div>
     </form>
     </div>

@@ -6,35 +6,37 @@ $id=$_GET["class_id"];
 ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Update class</h2>
-      <hr>
-    </section>
-    
+  <div class="content-wrapper">
+   
     <!-- Main content -->
-    <br><BR>
+
     <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Class</h3><br>
+      <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
+        
+        <div class="col-md-4">
           <label for="">class Name</label>
           <input type="text" name="class_name" class="form-control" placeholder="Enter Name of class" value="<?php echo$row['class_name']; ?>" required="" >
-           <label for="">class Description </label>
-          <textarea name="class_description" required="" class="form-control" placeholder=" class Description " rows="5"> <?php echo $row["class_description"]; ?></textarea>
+           
           
         </div>
-        
+        <div class="col-md-4">
+          <label for="">class Description </label>
+          <textarea name="class_description" required="" class="form-control" placeholder=" class Description " rows="5"> <?php echo $row["class_description"]; ?></textarea>
+        </div>
+        <div class="col-md-4">
+          
+        </div>
       
         
       </div>
       <br>
       <div class="row">
-        <div class="col-md-1"></div>
-        <button type="submit" class="btn btn-info" name="submit"><i  class="fa fa-save"></i> Update class</button>
+        <div class="col-md-4">
+        <button type="submit" class="btn btn-primary" name="submit"><i class="glyphicon glyphicon-ok"></i> Update</button>&nbsp;
         <a href="index.php" title="Go to main page" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+        </div>
       </div>
     </form>
     </div>

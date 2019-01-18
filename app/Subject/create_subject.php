@@ -2,25 +2,21 @@
 ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Create new Subject</h2>
-      <hr>
-    </section>
-    <br><BR>
     <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00a65a; color: white; text-align: center;">Create New Subject</h3>
+      <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00a65a;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Subject Name</label>
           <input type="text" class="form-control" name="subject_name" required="" placeholder="Enter Subject Name" required="" autofocus="" required="">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Subject Fee</label>
           <input type="text" class="form-control" name="subject_fee" required="" placeholder="Enter subject Fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Select Class</label>
           <select name="class_id" class="form-control">
             <option >--- Select The class---</option>
@@ -38,7 +34,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Subject Description</label>
           <textarea name="subject_description" class="form-control" rows="5" placeholder="Enter description  of subject" required=""></textarea>
           <br>
@@ -47,8 +43,8 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <button type="submit" class="btn btn-info" name="submit"><i class="fa fa-plus-square"></i> Add Subject</button>
-          <a href="index.php" title="Go to back" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+          <button type="submit" class="btn btn-primary" name="submit"><i class="glyphicon glyphicon-save"></i> Save</button>&nbsp;
+          <a href="index.php" title="Go to back" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i>  Cancel</a>
         </div>
       </div>
     </form>

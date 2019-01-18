@@ -8,25 +8,20 @@
 ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background-color: white;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-       <h2>Update Subject</h2>
-      <hr>
-    </section>
-    <br><BR>
+  <div class="content-wrapper">
     <div class="container-fluid">
-      <form method="POST" style="background-color: white;" enctype="multipart/form-data">
+      <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Subject</h3><br>
+      <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Subject Name</label>
           <input type="text" class="form-control" name="subject_name" required="" placeholder="Enter Subject Name" required="" autofocus="" value="<?php echo $query_result['subject_name'] ?>" >
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Subject Fee</label>
           <input type="text" class="form-control" name="subject_fee" required="" placeholder="Enter subject Fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required value="<?php echo $query_result['subject_fee'] ?>">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <?php 
             $class1 = "SELECT * FROM classes WHERE class_id = $class_id";
                   $classResult= mysqli_query($con,$class1);
@@ -60,7 +55,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label for=""> Subject Description</label>
           <textarea name="subject_description" class="form-control" rows="5" placeholder="Enter description  of subject"><?php echo $query_result['subject_description']; ?>"</textarea>
           <br>
@@ -69,18 +64,12 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <button type="submit" class="btn btn-info" name="submit"><i class="fa fa-save"></i> Update Subject</button>
-          <a href="index.php" title="Go to back" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</a>
+          <button type="submit" class="btn btn-info" name="submit"><i class="glyphicon glyphicon-ok"></i> Update</button> &nbsp;
+          <a href="index.php" title="Go to back" class="btn btn-danger"> <i class="glyphicon glyphicon-remove"></i> Cancel</a>
         </div>
       </div>
     </form>
     </div>
-
-
-
-
-
-
 
 <?php
   if(isset($_POST["submit"]))

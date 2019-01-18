@@ -4,16 +4,11 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-    <h2>Groups</h2>
-    <hr>
-    <section class="content-header">
-       <a href="create_group.php" class="btn btn-primary">Create Groups</a><br>
-      
-    </section>
-    
+    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">Group Details</h3>
+
     <!-- Main content -->
-    
-    <br><BR><div class="box-body well">
+<div class="box-body well"  style="border-top:1px solid #3c8dbc;">
+  <a href="create_group.php" class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Groups</a><hr>
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -43,22 +38,13 @@
                     <td><?php error_reporting(0); echo $row['group_type'] ;?></td>
                     <td><?php error_reporting(0); echo $row['group_description'] ;?></td>
                    
-                    <td><a href="update_group.php?group_id=<?php echo $row['group_id'];?>" class="label label-info">Update</a>
-                      <a href="delete_group.php?group_id=<?php echo $row['group_id'];?>" class="label label-danger" onclick="return confirm('Are you sure to delete this group');">Delete</a></td>
+                    <td><a href="update_group.php?group_id=<?php echo $row['group_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                      <a href="delete_group.php?group_id=<?php echo $row['group_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this group');"><i class="glyphicon glyphicon-trash"></i> Delete</a></td>
                   </tr>
                   <?php
                 }
                ?>
                 </tbody>
-                <tfoot>
-                <tr>
-                 <th>Group Name</th>
-                  <th>Group Type</th>
-                  <th>Group Description</th>
-                  
-                  <th>Action</th>
-                </tr>
-                </tfoot>
               </table>
               </div>
           </div>

@@ -4,19 +4,12 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="well" style="border-left: 2px solid;">Subject Section</h2>
-        </div>
-        
-      </div>
-    
+       <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">Subjects Details</h3>
     <!-- Main content -->
-
-    <br><BR><div class="box-body well">
-    <section style="border-bottom: 1px solid; padding: 10px;">
-      <a href="create_subject.php" class="btn btn-primary">Create Subject</a>
-    </section><br>
+<div class="box-body well" style="border-top:1px solid #3c8dbc;">
+    
+      <a href="create_subject.php" class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Subject</a><hr>
+    
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -44,8 +37,8 @@
                     <td><?php error_reporting(0); echo $row['subject_description'] ;?></td>
                     <td><?php error_reporting(0); echo $row['subject_fee'] ;?></td>
                     <td><?php error_reporting(0); echo $classes['class_name'];?></td>
-                    <td><a href="update_subject.php?subject_id=<?php echo $row['subject_id'];?>" class="label label-info">Update</a>
-                      <a href="delete_subject.php?subject_id=<?php echo $row['subject_id'];?>" class="label label-danger" onclick="return confirm('Are you sure to delete this this');">Delete</a></td>
+                    <td><a href="update_subject.php?subject_id=<?php echo $row['subject_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                      <a href="delete_subject.php?subject_id=<?php echo $row['subject_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this this');"><i class="glyphicon glyphicon-trash"></i> Delete</a></td>
                   </tr>
                   <?php
                   
