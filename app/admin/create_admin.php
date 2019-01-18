@@ -10,7 +10,7 @@
         <div class="row" >
           <div class="col-md-4 form-group">
             <label>User Name</label>
-            <input type="text" class="form-control" name="username" placeholder="User Name">
+            <input type="text" class="form-control" name="username" placeholder="User Name" required="">
             <?php 
               if (isset($err_user)) {
                echo $err_user;
@@ -21,11 +21,11 @@
           </div>
           <div class="col-md-4 form-group">
             <label>Password</label>
-            <input type="Password" class="form-control" name="password" placeholder="Password">
+            <input type="Password" class="form-control" name="password" placeholder="Password" required="">
           </div>
           <div class="col-md-4 form-group">
             <label>Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Email Address">
+            <input type="email" class="form-control" name="email" placeholder="Email Address" required="" >
             <?php 
               if (isset($err_email)) {
                echo $err_email;
@@ -33,34 +33,29 @@
 
             ?>
           </div>
+
         </div>
         <div class="row">
-          <div class="col-md-4 form-group">
-            <label>Contact</label>
-            <input type="text" class="form-control" name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask placeholder="Phone No">
-          </div>
-          <div class="col-md-4 form-group">
-            <label>User Profile</label>
-            <input type="file" class="form-control" name="profile">
-            <?php 
-              if (isset($err_pic)) {
-                echo $err_pic;
-              }
-            ?>
-          </div>
-          <div class="col-md-4 form-group">
-            
-          </div>
+        <div class="col-md-4 form-group">
+          <label>Contact</label>
+          <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-4" style="padding-left: 15px;">
-            <button type="submit" class="btn btn-primary" name="save"> <i class="glyphicon glyphicon-save"></i> Save</button> &nbsp;
-            <a href="manage_admin.php" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancle</a>
-          </div>
+        <div class="col-md-4 form-group">
+          <label>User Profile</label>
+          <input type="file" class="form-control"  name="profile" required="">
         </div>
-      </form>
       </div>
+      <div class="row">
+        <div class="col-md-4">
+        <button type="submit" class="btn btn-primary" name="submit"><i class="glyphicon glyphicon-save"></i> Save</button>&nbsp;
+        <a href="manage_admin.php" title="Go to main page" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+        </div>
+      </div>
+
+
+
+  <!-- Content Wrapper. Contains page content -->
+
 
 
   <?php
