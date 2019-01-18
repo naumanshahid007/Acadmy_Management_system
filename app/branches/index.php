@@ -16,10 +16,8 @@
                   <th>Branch Name</th>
                   <th>Branch Code</th>
                   <th>Branch Location</th>
-                  <th>Branch Contact No</th>
-                  <th>Branch Email</th>
-                  <th>Branch Head Name</th>
-                  <th>Br. Head Contact No</th>
+                
+                  
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -32,10 +30,7 @@
                     <td><?php error_reporting(0); echo $row['branch_name'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_code'] ;?></td>
                     <td><?php error_reporting(0); echo $row['branch_location'] ;?></td>
-                    <td><?php error_reporting(0); echo $row['branch_contact_no'] ;?></td>
-                    <td><?php error_reporting(0); echo $row['branch_email'] ;?></td>
-                    <td><?php error_reporting(0); echo $row['branch_head_name'] ;?></td>
-                    <td><?php error_reporting(0); echo $row['branch_head_contact_no'] ;?></td>
+                    
                     <td>
                       <a href="update_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
 
