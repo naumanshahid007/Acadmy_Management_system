@@ -18,6 +18,7 @@
                 <thead>
                 <tr>
                   <th>Group Name</th>
+                  <th>Class</th>
                   <th>Group Type</th>
                   <th>Group Description</th>
                   
@@ -28,9 +29,17 @@
                <?php
                 $query_show = "SELECT * FROM groups WHERE delete_status = 1 ";
                 $result     = mysqli_query($con,$query_show);
-                while ($row = mysqli_fetch_array($result)) { ?>
+                while ($row = mysqli_fetch_array($result)) { 
+                   $classID = $row['class_id']; 
+                  $class = "SELECT class_name FROM classes WHERE class_id = $classID";
+                  $classResult     = mysqli_query($con,$class);
+                  $classes = mysqli_fetch_array($classResult); 
+
+
+                  ?>
                   <tr>
                     <td><?php error_reporting(0); echo $row['group_name'] ;?></td>
+                    <td> <?php echo $classes["class_name"] ?></td>
                     <td><?php error_reporting(0); echo $row['group_type'] ;?></td>
                     <td><?php error_reporting(0); echo $row['group_description'] ;?></td>
                    
