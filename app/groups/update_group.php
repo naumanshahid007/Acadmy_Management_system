@@ -55,8 +55,15 @@ $id=$_GET["group_id"];
         <div class="col-md-4">
           <label for="">Group Type</label>
           <select name="group_type" class="form-control">
-            <option value="morning">Morning</option>
-            <option value="evening">evening</option>
+            <option value='<?php echo $row["group_type"]; ?>'><?php echo $row["group_type"]; ?></option>
+            <?php
+            if ($row["group_type"]!="Morning") {?>
+               <option value="Morning">Morning</option>
+            <?php } 
+           else {?>
+            <option value="Evening">Evening</option>
+           <?php }
+            ?>
           </select>
         </div>
 
