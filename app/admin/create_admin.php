@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a50eb5258d388d069afd40b448f2da4f7d6bab1
   <?php include("../includes/header.php"); 
   ?>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="background-color: white;">
+    <div class="content-wrapper">
       <!-- Main content -->
       <div class="container-fluid">
         <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00a65a; color: white; text-align: center;">Create New Admin</h3><br>
@@ -34,6 +37,7 @@
 
             ?>
           </div>
+<<<<<<< HEAD
         </div>
         <div class="row">
         <div class="col-md-4 form-group">
@@ -43,6 +47,8 @@
         <div class="col-md-4 form-group">
           <label>User Profile</label>
           <input type="file" class="form-control"  name="profile" required="">
+=======
+>>>>>>> 4a50eb5258d388d069afd40b448f2da4f7d6bab1
         </div>
       </div>
       <<button type=""></button>
@@ -77,25 +83,6 @@
 
 
   ?>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
-      </div>
-      <strong>Copyright &copy; 2014-2016 <a href="http://dexdevs.com/">DEXDEVS</a>.</strong> All rights
-      reserved.
-    </footer>
-
-    <!-- Control Sidebar -->
-    
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-  </div>
-  <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
   <?php include"../includes/footer.php"; ?>

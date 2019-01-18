@@ -39,16 +39,6 @@
                 }
                ?>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Institute Name</th>
-                  <th>Institute Description</th>
-                  <th>Institute Location</th>
-                  <th>Institute Picture</th>
-                  <th>Institute Account No</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
               </table>
               </div>
           </div>

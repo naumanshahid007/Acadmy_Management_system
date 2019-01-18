@@ -40,15 +40,6 @@
                 }
                ?>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>User Name</th>
-                  <th>Email</th>
-                  <th>Contact</th>
-                  <th>Profile</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
               </table>
               </div>
           </div>

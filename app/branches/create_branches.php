@@ -4,7 +4,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
-    <div class="container">
+    <div class="container-fluid">
       <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00a65a; color: white; text-align: center;">Create New Branch</h3>
       <form method="POST" enctype="multipart/form-data"  class="well" style="border-top:1px solid #00a65a;">
       <div class="row">
@@ -70,12 +70,6 @@
     </form>
     </div>
 
-
-
-
-
-
-
 <?php
   if(isset($_POST["submit"]))
   {
@@ -111,16 +105,6 @@
     reserved.
   </footer>
 
-  <!-- Control Sidebar -->
-  
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 3 -->
 <?php include"../includes/footer.php"; ?>
 
 
