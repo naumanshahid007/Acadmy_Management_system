@@ -83,7 +83,7 @@
     $branch_head_contact_no = $_POST["branch_head_contact_no"];
     $branch_head_email     = $_POST["branch_head_email"];
 
-    $query_insert = " INSERT INTO `branches`(`institute_id`, `branch_name`, `branch _code`, `branch_location`, `branch_contact_no`, `branch_email`, `branch_head_name`, `branch_head_contact_no`, `branch_head_email`) VALUES ('$institute_name','$branch_name','$branch_code','$branch_location','$branch_contact_no','$branch_email','$branch_head_name','$branch_head_contact_no','$branch_head_email')";
+    $query_insert = " INSERT INTO `branches`(`institute_id`, `branch_name`, `branch_code`, `branch_location`, `branch_contact_no`, `branch_email`, `branch_head_name`, `branch_head_contact_no`, `branch_head_email`) VALUES ('$institute_name','$branch_name','$branch_code','$branch_location','$branch_contact_no','$branch_email','$branch_head_name','$branch_head_contact_no','$branch_head_email')";
 
     $result2   = mysqli_query($con,$query_insert);
     if($result2)
