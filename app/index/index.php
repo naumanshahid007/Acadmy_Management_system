@@ -28,7 +28,7 @@
               ?>
               <h3><?php echo $c ?></h3>
 
-              <p>New Students</p>
+              <p>Total Students</p>
             </div>
             <div class="icon">
               <i class="ion ion-man"></i>
@@ -52,7 +52,7 @@
               ?>
               <h3><?php echo $c ?></h3>
 
-              <p>New Subjects</p>
+              <p>Total Subjects</p>
             </div>
             <div class="icon">
               <i class="ion ion-book"></i>
@@ -76,7 +76,7 @@
               ?>
               <h3><?php echo $c ?></h3>
 
-              <p>New Teachers</p>
+              <p>Total Teachers</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -100,7 +100,7 @@
                 }
               ?>
               <h3><?php echo $c ?></h3>
-              <p>New Class</p>
+              <p>Total Class</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -125,7 +125,7 @@
                 }
               ?>
               <h3><?php echo $c ?></h3>
-              <p>New Groups</p>
+              <p>Total Groups</p>
             </div>
             <div class="icon">
               <i class="ion ion-groups"></i>
