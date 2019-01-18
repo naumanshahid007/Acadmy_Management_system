@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 4a50eb5258d388d069afd40b448f2da4f7d6bab1
   <?php include("../includes/header.php"); 
   ?>
 
@@ -37,7 +33,7 @@
 
             ?>
           </div>
-<<<<<<< HEAD
+
         </div>
         <div class="row">
         <div class="col-md-4 form-group">
@@ -47,11 +43,14 @@
         <div class="col-md-4 form-group">
           <label>User Profile</label>
           <input type="file" class="form-control"  name="profile" required="">
-=======
->>>>>>> 4a50eb5258d388d069afd40b448f2da4f7d6bab1
         </div>
       </div>
-      <<button type=""></button>
+      <div class="row">
+        <div class="col-md-4">
+        <button type="submit" class="btn btn-primary" name="submit"><i class="glyphicon glyphicon-save"></i> Save</button>&nbsp;
+        <a href="manage_admin.php" title="Go to main page" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+        </div>
+      </div>
 
 
 
