@@ -1,10 +1,22 @@
 <?php include("../includes/header.php"); 
 
-$id=$_GET["group_id"];
- $query  = "SELECT * FROM groups WHERE group_id = $id ";
-      $res    = mysqli_query($con,$query);
-      $row=mysqli_fetch_assoc($res);
-      $class_id=$row["class_id"];
+    // get selected group id
+    $id=$_GET["group_id"];
+
+    // select group of slected group id
+    $query  = "SELECT * FROM groups WHERE group_id = '$id' AND delete_status = 1";
+    $res    = mysqli_query($con,$query);
+    $row    =mysqli_fetch_assoc($res);
+    $subject_id =$row["subject_id"];
+
+    // select a subject related to a group
+    $subject=mysqli_query($con,"SELECT subject_name FROM subjects WHERE subject_id = '$subject_id' AND delete_status = 1");
+    $showsubject = mysqli_fetch_assoc($subject);
+
+    // select all subjects
+    $subjects=mysqli_query($con,"SELECT subject_id, subject_name FROM subjects WHERE subject_id != '$subject_id' AND delete_status = 1");
+    //$showsubjects = mysqli_fetch_assoc($subjects);
+    
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -17,29 +29,16 @@ $id=$_GET["group_id"];
       <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
       <div class="row">
         <div class="col-md-4 form-group">
-          <label for="">Class</label>
-          <?php 
-            $clas=mysqli_query($con,"SELECT * FROM classes WHERE class_id=$class_id");
-            $row1=mysqli_fetch_assoc($clas);
-            $classes=$row1["class_id"];
+          <label for="">Subjects</label>
+          <select name="subject_id" class="form-control">
+            <option value="<?php echo $showsubject["subject_id"]; ?>"><?php echo $showsubject["subject_name"]; ?>
+            </option>
+            <?php while($showsubjects = mysqli_fetch_assoc($subjects)){ ?>
+            <option value="<?php echo $showsubjects["subject_id"]; ?>"><?php echo $showsubjects["subject_name"]; ?>
+              
+            </option>
+            <?php } ?>
 
-          ?>
-          <select name="class_id" class="form-control">
-            <option value="<?php echo $row1["class_id"]; ?>"><?php echo $row1["class_name"]; ?></option>
-          
-          <?php 
-            $sql1="SELECT * FROM classes WHERE delete_status='1'";
-            $result=mysqli_query($con,$sql1);
-            while ($row2=mysqli_fetch_assoc($result)) {
-             if ( $classes!=$row2['class_id']) {
-               ?>
-                <option value=" <?php echo $row2["class_id"]; ?>"> <?php echo $row2["class_name"]; ?></option>
-             <?php
-             }
-            }
-
-
-          ?>
           </select>
         </div>
         
@@ -67,10 +66,44 @@ $id=$_GET["group_id"];
       <div class="row">
         
         <div class="col-md-4" form-group>
+          <label for=""> Group Status</label>
+          <select name="group_status" class="form-control">
+              <option value="<?php echo $row["group_status"];?>"><?php echo $row["group_status"];?></option>
+              <?php
+            if ($row["group_status"]!="Active") {?>
+               <option value="Active">Active</option>
+            <?php } 
+           else {?>
+            <option value="Inactive">Inactive</option>
+           <?php }
+            ?>
+          </select>
+        </div>
+
+        <div class="col-md-4" form-group>
+          <label for=""> Group Time</label>
+          <input type="time" name="group_time" class="form-control" value="<?php echo $row['group_time'];?>">
+        </div>
+        <div class="col-md-4 form-group">
+          <label>Group Start Date</label>
+          <input type="date" name="group_start_date" class="form-control" value="<?php echo $row['group_start_date']; ?>">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <label>Group End Date</label>
+          <input type="date" name="group_end_date" class="form-control" value="<?php echo $row['group_end_date']; ?>">
+        </div>
+
+        <div class="col-md-4" form-group>
           <label for="">Group Description </label>
           <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"required=""><?php echo $row["group_description"]; ?></textarea>
         </div>
 
+        <div class="col-md-4">
+          
+        </div>
       </div>
       <br>
       <div class="row">
@@ -93,12 +126,14 @@ $id=$_GET["group_id"];
   {
     $group_name = $_POST["group_name"];
     $group_type = $_POST["group_type"];
-    $class_id=$_POST["class_id"];
+    $group_status = $_POST["group_status"];
+    $group_time = $_POST["group_time"];
+    $subject_id=$_POST["subject_id"];
     $group_description    = $_POST["group_description"];
     $update_at=date("d/m/Y");
-
-    $query_insert = "UPDATE  groups SET group_name='$group_name',group_type='$group_type',group_description='$group_description',updated_at='$update_at',class_id='$class_id' WHERE group_id='$id'";
-    $result   = mysqli_query($con,$query_insert);
+    
+    $query_update = "UPDATE groups SET group_name = '$group_name', group_type = '$group_type', group_description = '$group_description', group_status = '$group_status', group_time = '$group_time', updated_at ='$update_at', subject_id = '$subject_id' WHERE group_id = '$id'";
+    $result   = mysqli_query($con,$query_update);
     if($result)
       {
         echo "<script type='text/javascript'>window.location='index.php'</script>";

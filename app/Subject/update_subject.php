@@ -5,6 +5,21 @@
     $query_result=mysqli_fetch_assoc($query);
     $class_id=$query_result['class_id'];
 
+    // display class to specific class id
+    $class = "SELECT * FROM classes WHERE class_id = '$class_id' AND delete_status = 1";
+    $classresult= mysqli_query($con,$class);
+    $showclass = mysqli_fetch_assoc($classresult);
+
+    
+
+
+    // diaplay all classes
+    $classes = "SELECT * FROM classes WHERE class_id != '$class_id' AND delete_status = 1";
+    $classesesult= mysqli_query($con,$classes);
+    $showclasses = mysqli_fetch_assoc($classesesult);
+
+
+
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -22,35 +37,15 @@
           <input type="text" class="form-control" name="subject_fee" required="" placeholder="Enter subject Fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required value="<?php echo $query_result['subject_fee'] ?>">
         </div>
         <div class="col-md-4 form-group">
-          <?php 
-            $class1 = "SELECT * FROM classes WHERE class_id = $class_id";
-                  $classResult= mysqli_query($con,$class1);
-                  $clas = mysqli_fetch_assoc($classResult); 
-                  
-                ?>
-                  
-          
           <label for=""> Select Class</label>
           <select name="class_id" class="form-control">
-            <option value="<?php echo $clas['class_id']; ?>"><?php echo $clas['class_name']; ?> </option>
+            <option value="<?php echo $showclass['class_id']; ?>"><?php echo $showclass['class_name']; ?> </option>
             
-            <option >--- Select The class---</option>
-            <?php 
-               
-                  //Query
-                  $class = "SELECT * FROM classes ";
-                  $classResult     = mysqli_query($con,$class);
-                  while($classes = mysqli_fetch_array($classResult)){ 
-                  if ($class_id!=$classes['class_id']) {
-                    ?>
-                    <option value="<?php echo $classes['class_id']; ?>"><?php echo $classes['class_name']; ?> </option>
-                    <?php
-                  }
-               
-               
-              }
-            ?>
-            
+            <?php while($showclasses = mysqli_fetch_assoc($classesesult)){ ?>
+            <option value="<?php echo $showclasses['class_id']; ?>">
+              <?php echo $showclasses['class_name']; ?>
+            </option>
+            <?php } ?>
           </select>
         </div>
       </div>

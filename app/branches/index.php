@@ -8,7 +8,7 @@
     
     <!-- Main content -->
   <div class="box-body well" style="border-top:1px solid #3c8dbc;">
-       <a href="create_branches.php" class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Branch</a><br><hr>
+       <a href="create_branches.php" class="btn btn-success btn-xs" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Branch</a><br><hr>
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -32,9 +32,11 @@
                     <td><?php error_reporting(0); echo $row['branch_location'] ;?></td>
                     
                     <td>
-                      <a href="update_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                      <a href="view_branch_details.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-pencil"></i> View</a>
+                       
+                      <a href="update_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
 
-                      <a href="delete_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this institute');"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                      <a href="delete_branch.php?branch_id=<?php echo $row['branch_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this institute');"><i class="glyphicon glyphicon-trash"></i> Delete</a>
                     </td>
                   </tr>
                   <?php
@@ -65,5 +67,4 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
 <?php include"../includes/footer.php"; ?>

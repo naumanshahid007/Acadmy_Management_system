@@ -9,14 +9,6 @@
       <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00a65a;">
       <div class="row">
         <div class="col-md-4 form-group">
-          <label for=""> Subject Name</label>
-          <input type="text" class="form-control" name="subject_name" required="" placeholder="Enter Subject Name" required="" autofocus="" required="">
-        </div>
-        <div class="col-md-4 form-group">
-          <label for=""> Subject Fee</label>
-          <input type="text" class="form-control" name="subject_fee" required="" placeholder="Enter subject Fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required>
-        </div>
-        <div class="col-md-4 form-group">
           <label for=""> Select Class</label>
           <select name="class_id" class="form-control">
             <option >--- Select The class---</option>
@@ -31,6 +23,16 @@
             ?>
             
           </select>
+         
+        </div>
+        <div class="col-md-4 form-group">
+           <label for=""> Subject Name</label>
+          <input type="text" class="form-control" name="subject_name" required="" placeholder="Enter Subject Name" required="" autofocus="" required="">
+         
+        </div>
+        <div class="col-md-4 form-group">
+           <label for=""> Subject Fee</label>
+          <input type="text" class="form-control" name="subject_fee" required="" placeholder="Enter subject Fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required>
         </div>
       </div>
       <div class="row">

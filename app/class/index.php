@@ -8,29 +8,36 @@
 
     <!-- Main content -->
 <div class="box-body well" style="border-top:1px solid #3c8dbc;">
-      <a href="create_class.php" class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create class</a><hr> 
+      <a href="create_class.php" class="btn btn-success btn-xs" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create class</a><hr> 
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th>Branch Name</th>
                   <th>Class Name</th>
-                  
                   <th>Class Description</th>
-                  
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                <?php
-                $query_show = "SELECT * FROM classes WHERE delete_status = 1 ";
+                $query_show = "SELECT * FROM classes WHERE delete_status = 1";
                 $result     = mysqli_query($con,$query_show);
-                while ($row = mysqli_fetch_array($result)) { ?>
+                
+                while ($row = mysqli_fetch_assoc($result)) { 
+                $branch_id = $row['branch_id'];
+                $branches = "SELECT * FROM branches WHERE branch_id = {$branch_id} AND delete_status = 1";
+                $showbranches = mysqli_query($con,$branches);
+                $branchname = mysqli_fetch_assoc($showbranches);
+
+                  ?>
                   <tr>
+                    <td><?php echo $branchname['branch_name']; ?></td>
                     <td><?php error_reporting(0); echo $row['class_name'] ;?></td>
                     
                     <td><?php error_reporting(0); echo $row['class_description'] ;?></td>
                    
-                    <td><a href="update_class.php?class_id=<?php echo $row['class_id'];?>" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                      <a href="delete_class.php?class_id=<?php echo $row['class_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this this');"><i class="glyphicon glyphicon-trash"></i> Delete</a></td>
+                    <td><a href="update_class.php?class_id=<?php echo $row['class_id'];?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                      <a href="delete_class.php?class_id=<?php echo $row['class_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this this');"><i class="glyphicon glyphicon-trash"></i> Delete</a></td>
                   </tr>
                   <?php
                 }

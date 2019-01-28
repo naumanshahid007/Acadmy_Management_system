@@ -360,8 +360,9 @@
             <li><a href="../institutes/index.php"><i class="fa fa-institution"></i> Institute</a></li>
             <li><a href="../branches/index.php"><i class="fa fa-btc"></i> Branch</a></li>
             <li><a href="../class/index.php"><i class="fa fa-copyright"></i> Classes</a></li>
-            <li><a href="../groups/index.php"><i class="fa fa-group"></i> Groups</a></li>
             <li><a href="../Subject/"><i class="fa fa-skype"></i> Subjects</a></li>
+            <li><a href="../groups/index.php"><i class="fa fa-group"></i> Groups</a></li>
+            
            
           </ul>
         </li>
@@ -374,8 +375,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Teacher Personal Info</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-at"></i>Teacher Assign</a></li>
+            <li><a href="../teachers/index.php"><i class="fa fa-pied-piper-pp"></i> Teacher Personal Info</a></li>
+            <li><a href="../teachers_assign/index.php"><i class="fa fa-at"></i>Teacher Assign</a></li>
             
           </ul>
         </li>

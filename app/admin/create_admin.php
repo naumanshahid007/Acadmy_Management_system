@@ -41,7 +41,7 @@
           <input type="text" class="form-control" value="<?php  echo $row['contact'] ;?>"  name="contact" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
         </div>
         <div class="col-md-4 form-group">
-          <label>User Profile</label>
+          <label>User Photo</label>
           <input type="file" class="form-control"  name="profile" required="">
         </div>
       </div>

@@ -9,7 +9,7 @@
     <!-- Main content -->
     
     <div class="box-body well"  style="border-top:1px solid #3c8dbc;">
-      <a href="create_institutes.php"  class="btn btn-success" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Institute</a><hr>
+      <a href="create_institutes.php"  class="btn btn-success btn-xs" style="font-size: 15px; border-radius: 10px;"><i class="glyphicon glyphicon-plus-sign"></i> Create Institute</a><hr>
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -31,9 +31,16 @@
                     <td><?php error_reporting(0); echo $row['institute_description'] ;?></td>
                     <td><?php error_reporting(0); echo $row['institute_location'] ;?></td>
                     <td> <a href="<?php  echo $row['institute_picture'];?>"><img src="<?php  echo $row['institute_picture'];?>" class="img-circle" width="50px" height="50px"></a></td>
+
                     <td><?php error_reporting(0); echo $row['institute_account_no'] ;?></td>
-                    <td><a href="update_institutes.php?institute_id=<?php echo $row['institute_id'];?>"  class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                      <a href="delete_institute.php?institute_id=<?php echo $row['institute_id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this institute');"><i class="glyphicon glyphicon-trash"></i> Delete</a></td>
+
+                    <td>
+                      <a href="update_institutes.php?institute_id=<?php echo $row['institute_id'];?>"  class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit
+                      </a>
+
+                      <a href="delete_institute.php?institute_id=<?php echo $row['institute_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this institute');"><i class="glyphicon glyphicon-trash"></i> Delete
+                      </a>
+                    </td>
                   </tr>
                   <?php
                 }
