@@ -92,26 +92,33 @@
     </form>
     </div>
 
-
-
-
-
-
-
 <?php
+
+
   if(isset($_POST["submit"]))
   {
-    $group_name = $_POST["group_name"];
-    $group_type = $_POST["group_type"];
-    $subject_id=$_POST["subject_id"];
-    $group_status=$_POST["group_status"];
-    $group_time=$_POST["group_time"];
-    $group_start_date=$_POST["group_start_date"];
-    $group_end_date=$_POST["group_end_date"];
-    $group_description= $_POST["group_description"];
-    
 
-    $query_insert = "INSERT INTO groups(group_name,group_type,subject_id,group_description,group_status,group_time,group_start_date,group_end_date,created_by) VALUES ('$group_name','$group_type','$subject_id','$group_description','$group_status','$group_time','$group_start_date','$group_end_date','$user')";
+    $group_name         = $_POST["group_name"];
+    $group_type         = $_POST["group_type"];
+    $subject_id         =$_POST["subject_id"];
+    $group_status       =$_POST["group_status"];
+    $group_time         =$_POST["group_time"];
+    $group_start_date   =$_POST["group_start_date"];
+    $group_end_date     =$_POST["group_end_date"];
+    $group_description  = $_POST["group_description"];
+
+
+    $subject = "SELECT subject_name FROM subjects WHERE subject_id = '$subject_id' AND delete_status = 1";
+    $subjectresult = mysqli_query($con,$subject);
+    $subjectrow = mysqli_fetch_assoc($subjectresult);
+    $subject_name = $subjectrow['subject_name'];
+
+    $groupInfo = $subject_name.' - '.$group_name.' - ' . date('h:A',strtotime($group_time));
+
+    $query_insert = "INSERT INTO groups (group_name, group_type, subject_id, group_description, group_status, group_time, group_start_date, group_end_date,group_info,created_by) VALUES ('$group_name','$group_type','$subject_id','$group_description','$group_status','$group_time','$group_start_date','$group_end_date','$groupInfo','$user')";
+
+
+    //echo $groupInfo;
     $result   = mysqli_query($con,$query_insert);
     if($result)
       {

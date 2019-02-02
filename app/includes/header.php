@@ -347,7 +347,7 @@
             <i class="fa fa-home"></i> <span>Home</span>
           </a> 
         </li>
-     <li><a href="../admin/manage_admin.php"><i class="fa fa-user"></i> <span>Manage Admin</span></a></li>
+     
         <li class="treeview">
           <a href="../../#">
             <i class="fa fa-laptop"></i>
@@ -375,22 +375,36 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../teachers/index.php"><i class="fa fa-pied-piper-pp"></i> Teacher Personal Info</a></li>
-            <li><a href="../teachers_assign/index.php"><i class="fa fa-at"></i>Teacher Assign</a></li>
+            <li><a href="../teachers_personal/index.php"><i class="fa fa-pied-piper-pp"></i> Teacher Personal Info</a></li>
+            <li><a href="../teacher_assign/index.php"><i class="fa fa-at"></i>Teacher Assign</a></li>
             
           </ul>
         </li>
         <li class="treeview">
           <a href="../../#">
             <i class="fa fa-users"></i>
-            <span>Student</span>
+            <span>Student Registration</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Student Personal Info</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-sign-in"></i> Student Enrollment</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-sign-in"></i> Student Fee Details</a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="../../#">
+            <i class="fa fa-users"></i>
+            <span>Student Enrollment</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Student Enrollment Head</a></li>
+            <li><a href="../../pages/UI/icons.html"><i class="fa fa-sign-in"></i> Student Enrollment Details</a></li>
             
           </ul>
         </li>
@@ -408,12 +422,7 @@
             
           </ul>
         </li>
-        
-        
-        
-        
-        
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="../../#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -445,8 +454,8 @@
             </li>
             <li><a href="../../#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
-        </li>
-        <li><a href="manage_admin.php"><i class="fa fa-user"></i> <span>Manage Admin</span></a></li>
+        </li> -->
+        <li><a href="../admin/manage_admin.php"><i class="fa fa-user"></i> <span>Manage Admin</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
