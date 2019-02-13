@@ -1,14 +1,20 @@
- <?php include("../includes/header.php"); 
+    <?php include("../includes/header.php"); 
     ?>
     <?php 
+
     // get `teacher_id` from teacher personal `index.php`
-    $teacherId = $_GET['teacher_id'];
+
+    $stdId = $_GET['std_id'];
+
     // fetch data of a specific teacher againts selected `teacher_id` that is `teacherId`
-    $teacher        = "SELECT * FROM teacher_personal_info
-                      WHERE teacher_id = '$teacherId' 
+
+    $students        = "SELECT * FROM student_personal_information
+                      WHERE std_id = '$stdId' 
                       AND delete_status = 1";
-    $teacherresult  = mysqli_query($con,$teacher);
-    $showteacher    = mysqli_fetch_assoc($teacherresult);
+    $studentsresult  = mysqli_query($con,$students);
+    $showstudent    = mysqli_fetch_assoc($studentsresult);
+
+
      ?>
 
       <!-- Content Wrapper. Contains page content -->
@@ -37,24 +43,24 @@
               <!-- Profile Image -->
               <div class="box box-warning">
                 <div class="box-body box-profile">
-                  <img class="profile-user-img img-responsive img-circle" src="<?php echo $showteacher['teacher_picture']; ?>" alt="User profile picture">
+                  <img class="profile-user-img img-responsive img-circle" src="<?php echo $showstudent['teacher_picture']; ?>" alt="User profile picture">
 
-                  <h3 class="profile-username text-center"><?php echo $showteacher['teacher_name']; ?></h3>
+                  <h3 class="profile-username text-center"><?php echo $showstudent['teacher_name']; ?></h3>
 
-                  <p class="text-muted text-center"><?php echo $showteacher['teacher_qualification']; ?></p>
+                  <p class="text-muted text-center"><?php echo $showstudent['teacher_qualification']; ?></p>
 
                   <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
-                      <b>Father Name</b> <a class="pull-right"><?php echo $showteacher['teacher_father_name']; ?></a>
+                      <b>Father Name</b> <a class="pull-right"><?php echo $showstudent['teacher_father_name']; ?></a>
                     </li>
                     <li class="list-group-item">
-                      <b>Contact</b> <a class="pull-right"><?php echo $showteacher['teacher_contact_no']; ?></a>
+                      <b>Contact</b> <a class="pull-right"><?php echo $showstudent['teacher_contact_no']; ?></a>
                     </li>
                     <li class="list-group-item">
-                      <b>Gender</b> <a class="pull-right"><?php echo $showteacher['teacher_gender']; ?></a>
+                      <b>Gender</b> <a class="pull-right"><?php echo $showstudent['teacher_gender']; ?></a>
                     </li>
                     <li class="list-group-item">
-                      <b>CNIC</b> <a class="pull-right"><?php echo $showteacher['teacher_cnic']; ?></a>
+                      <b>CNIC</b> <a class="pull-right"><?php echo $showstudent['teacher_cnic']; ?></a>
                     </li>
                   </ul>
 
@@ -81,20 +87,20 @@
                       <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
                       <p class="text-muted">
-                        <?php echo $showteacher['teacher_qualification']; ?>
+                        <?php echo $showstudent['teacher_qualification']; ?>
                       </p>
 
                       <hr>
 
                       <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-                      <p class="text-muted"><?php echo $showteacher['teacher_permanent_address']; ?></p>
+                      <p class="text-muted"><?php echo $showstudent['teacher_permanent_address']; ?></p>
 
                       <hr>
 
                       <strong><i class="fa fa-envelope margin-r-5"></i> Email</strong>
 
-                      <p class="text-muted"><?php echo $showteacher['teacher_email']; ?></p>
+                      <p class="text-muted"><?php echo $showstudent['teacher_email']; ?></p>
 
                       <hr>
 
@@ -104,17 +110,17 @@
 
                       <strong><i class="fa fa-heart margin-r-5"></i> Marital Status</strong>
 
-                      <p class="text-muted"><?php echo $showteacher['teacher_marital_status']; ?></p>
+                      <p class="text-muted"><?php echo $showstudent['teacher_marital_status']; ?></p>
 
                       <hr>
                       <strong><i class="fa fa-user-plus margin-r-5"></i> Joining Date</strong>
 
-                      <p class="text-muted"><?php echo $showteacher['teacher_joining_date']; ?></p>
+                      <p class="text-muted"><?php echo $showstudent['teacher_joining_date']; ?></p>
 
                       <hr>
                       <strong><i class="fa fa-money margin-r-5"></i> Slary</strong>
 
-                      <p class="text-muted"><?php echo $showteacher['teacher_salary']; ?></p>
+                      <p class="text-muted"><?php echo $showstudent['teacher_salary']; ?></p>
 
                       <hr>
 
@@ -122,6 +128,7 @@
                   </div>
 
                   <!-- <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+
                   <p>
                     <span class="label label-danger">UI Design</span>
                     <span class="label label-success">Coding</span>
@@ -133,6 +140,7 @@
                   <!-- <hr> -->
 
                   <!-- <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p> -->
                 </div>
                 <!-- /.box-body -->
@@ -165,3 +173,6 @@
 
     <!-- jQuery 3 -->
     <?php include"../includes/footer.php"; ?>
+
+
+
