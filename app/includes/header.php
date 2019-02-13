@@ -389,8 +389,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Student Personal Info</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-sign-in"></i> Student Fee Details</a></li>
+            <li><a href="../student_personal/"><i class="fa fa-pied-piper-pp"></i> Student Personal Info</a></li>
+            <li><a href="../student_fee/"><i class="fa fa-sign-in"></i> Student Fee Details</a></li>
             
           </ul>
         </li>

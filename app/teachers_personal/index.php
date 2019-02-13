@@ -31,10 +31,8 @@
                <?php
                 
                 // Query to dispaly all tearchers from `teacher personal info` table
-
                 $teachers = "SELECT * FROM teacher_personal_info WHERE delete_status = 1";
                 $teachersresult     = mysqli_query($con,$teachers);
-
                 while ($showteachers = mysqli_fetch_assoc($teachersresult)) {  
                 ?>
                   <tr>
