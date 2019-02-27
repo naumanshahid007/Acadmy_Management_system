@@ -36,7 +36,7 @@
 
       <div class="container-fluid">
         <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color:#00c0ef; color: white; text-align: center;">Update Assign Teacher</h3><br>
-        <?php echo $teacherName  . $teacherid; ?>
+        <!-- <?php echo $teacherName  . $teacherid; ?> -->
         <form method="POST" enctype="multipart/form-data" class="well" style="border-top:1px solid #00c0ef;">
         <!-- row 1 start here -->
       <div class="row">
@@ -66,7 +66,26 @@
 
         <div class="col-md-4 form-group">
           <label>Select Group</label>
-          
+          <?php 
+  
+          // Query to fetch all groups from `groups` table
+
+          $groups = "SELECT * FROM  groups WHERE delete_status = 1";
+          $groupsresult = mysqli_query($con,$groups);
+
+
+          ?>
+          <select name="group_id" class="form-control">
+            <?php while($groupsrow = mysqli_fetch_assoc($groupsresult)){ 
+
+               ?>
+            <option value="<?php echo $groupsrow['group_id']; ?>">
+              <?php echo $groupsrow['group_info']; ?>
+            </option>
+            <?php 
+              
+            } ?>
+          </select>
         </div>
        
       </div>

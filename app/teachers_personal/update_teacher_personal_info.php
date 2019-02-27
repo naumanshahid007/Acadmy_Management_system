@@ -38,7 +38,7 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher CNIC</label>
-          <input type="cnic" name="teacher_cnic" class="form-control" value="<?php echo $showteacher['teacher_cnic'];?>">
+          <input type="cnic" name="teacher_cnic" class="form-control" value="<?php echo $showteacher['teacher_cnic'];?>" data-inputmask='"mask": "99999-9999999-9"' data-mask>
         </div>
        
       </div>
@@ -49,7 +49,7 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher Contact</label>
-          <input type="text" name="teacher_contact_no" class="form-control" value="<?php echo $showteacher['teacher_contact_no'];?>">
+          <input type="text" name="teacher_contact_no" class="form-control" value="<?php echo $showteacher['teacher_contact_no'];?>"  data-inputmask='"mask": "+99(999)-9999999"' data-mask>
         </div>
 
         <div class="col-md-4 form-group">
@@ -204,3 +204,6 @@
 
 
 <?php include"../includes/footer.php"; ?>
+<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>

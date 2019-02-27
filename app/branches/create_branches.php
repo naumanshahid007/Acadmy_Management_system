@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-4 form-group">
           <label>Branch Contact No</label>
-          <input type="text" name="branch_contact_no" class="form-control" placeholder="Enter branch contact No" required="">
+          <input type="text" name="branch_contact_no" class="form-control" placeholder="Enter branch contact No" required="" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
         </div>
         <div class="col-md-4 form-group">
           <label>Branch Email</label>
@@ -53,7 +53,7 @@
         </div>
         <div class="col-md-4" form-group>
           <label>Branch Head Contact No</label>
-          <input type="text" name="branch_head_contact_no" class="form-control" placeholder="Enter head Contact No" required="">
+          <input type="text" name="branch_head_contact_no" class="form-control" placeholder="Enter head Contact No" required="" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
         </div>
         <div class="col-md-4" form-group>
           <label>Branch Head Email</label>
@@ -106,6 +106,7 @@
   </footer>
 
 <?php include"../includes/footer.php"; ?>
-
-
-
+  <script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  

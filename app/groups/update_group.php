@@ -96,9 +96,9 @@
             <input type="date" name="group_end_date" class="form-control" value="<?php echo $row['group_end_date']; ?>">
           </div>
 
-          <div class="col-md-4" form-group>
+          <div class="col-md-8" form-group>
             <label for="">Group Description </label>
-            <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="5"required=""><?php echo $row["group_description"]; ?></textarea>
+            <textarea name="group_description" class="form-control" placeholder=" Group Description " rows="2"required=""><?php echo $row["group_description"]; ?></textarea>
           </div>
 
           <div class="col-md-4">

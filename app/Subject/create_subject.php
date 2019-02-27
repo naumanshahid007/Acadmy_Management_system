@@ -13,7 +13,7 @@
           <select name="class_id" class="form-control">
             <option >--- Select The class---</option>
             <?php 
-              $sql="SELECT * FROM classes ";
+              $sql="SELECT * FROM classes WHERE delete_status=1";
               $result=mysqli_query($con,$sql);
               while ($row=mysqli_fetch_assoc($result)) {
                ?>
@@ -36,9 +36,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 form-group">
+        <div class="col-md-12 form-group">
           <label for=""> Subject Description</label>
-          <textarea name="subject_description" class="form-control" rows="5" placeholder="Enter description  of subject" required=""></textarea>
+          <textarea name="subject_description" class="form-control" rows="2" placeholder="Enter description  of subject" required=""></textarea>
           <br>
         </div>
         

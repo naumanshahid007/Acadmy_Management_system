@@ -35,7 +35,7 @@
 
           <div class="col-md-4">
             <label for="">class Description </label>
-            <textarea name="class_description" required="" class="form-control" placeholder=" class Description " rows="5"></textarea>
+            <textarea name="class_description" required="" class="form-control" placeholder=" class Description " rows="1"></textarea>
           </div>
       
         </div>

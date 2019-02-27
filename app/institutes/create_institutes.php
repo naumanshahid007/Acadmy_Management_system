@@ -31,7 +31,7 @@
           </div>
           <div class="col-md-4 form-group">
             <label>Institutes Account No</label>
-            <input type="text" name="institute_account_no" class="form-control" placeholder="Enter Description Of Institute">
+            <input type="text" name="institute_account_no" class="form-control" placeholder="Enter Description Of Institute" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
           </div>
         </div>
         <br>
@@ -83,3 +83,7 @@
 
 
 
+  <script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  

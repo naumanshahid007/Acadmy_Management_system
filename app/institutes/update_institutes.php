@@ -32,7 +32,7 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <label>Institute Account No</label>
-          <input required="" type="text" class="form-control" value="<?php  echo $row['institute_account_no'] ;?>"  name="institute_account_no">
+          <input required="" type="text" class="form-control" value="<?php  echo $row['institute_account_no'] ;?>"  name="institute_account_no" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="">
         </div>
         <div class="col-md-4 form-group">
           <label>Institutes Profile</label>
@@ -96,4 +96,8 @@
     reserved.
   </footer>
 
- 
+ <?php include"../includes/footer.php" ?>
+ <script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  

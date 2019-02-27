@@ -50,9 +50,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 form-group">
+        <div class="col-md-12 form-group">
           <label for=""> Subject Description</label>
-          <textarea name="subject_description" class="form-control" rows="5" placeholder="Enter description  of subject"><?php echo $query_result['subject_description']; ?>"</textarea>
+          <textarea name="subject_description" class="form-control" rows="2" placeholder="Enter description  of subject"><?php echo $query_result['subject_description']; ?>"</textarea>
           <br>
         </div>
         

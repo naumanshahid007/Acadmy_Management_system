@@ -14,17 +14,17 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher Name</label>
-          <input type="text" name="teacher_name" class="form-control" required="required">
+          <input type="text" name="teacher_name" class="form-control" required="required" placeholder="Teacher Name">
         </div>
 
         <div class="col-md-4 form-group">
           <label>Teacher Father Name</label>
-          <input type="text" name="teacher_father_name" class="form-control">
+          <input type="text" name="teacher_father_name" class="form-control" placeholder="Teacher Father Name">
         </div>
 
         <div class="col-md-4 form-group">
           <label>Teacher CNIC</label>
-          <input type="cnic" name="teacher_cnic" class="form-control">
+          <input type="cnic" name="teacher_cnic" class="form-control" data-inputmask='"mask": "99999-9999999-9"' data-mask required="" placeholder="Teacher CNIC no ">
         </div>
        
       </div>
@@ -35,12 +35,12 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher Contact</label>
-          <input type="text" name="teacher_contact_no" class="form-control">
+          <input type="text" name="teacher_contact_no" class="form-control" data-inputmask='"mask": "+99(999)-9999999"' data-mask required="" placeholder="Teacher Contact No">
         </div>
 
         <div class="col-md-4 form-group">
           <label>Teacher Email</label>
-          <input type="email" name="teacher_email" class="form-control">
+          <input type="email" name="teacher_email" class="form-control" placeholder="Teacher email Adddress" required="">
         </div>
 
         <div class="col-md-4 form-group">
@@ -67,7 +67,7 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher Qualification</label>
-          <input type="text" name="teacher_qualification" class="form-control">
+          <input type="text" name="teacher_qualification" class="form-control" placeholder="Qualification of teacher">
         </div>
 
         <div class="col-md-4 form-group">
@@ -83,7 +83,7 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher Salary</label>
-          <input type="text" name="teacher_salary" class="form-control">
+          <input type="text" name="teacher_salary" class="form-control" placeholder="Teacher Salary">
         </div>
 
         <div class="col-md-4 form-group">
@@ -93,7 +93,7 @@
 
         <div class="col-md-4 form-group">
           <label>Teacher Permanent Address</label>
-          <textarea name="teacher_permanent_address" class="form-control" rows="3">
+          <textarea name="teacher_permanent_address" class="form-control" rows="1" placeholder="Teacher Permanent Address">
           </textarea>
         </div>
         
@@ -181,6 +181,8 @@
 
 <!-- jQuery 3 -->
 <?php include"../includes/footer.php"; ?>
-
+<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
 

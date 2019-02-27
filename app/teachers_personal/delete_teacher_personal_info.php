@@ -3,9 +3,9 @@
 	
 	// get `teacher_id` from teacher personal `index.php`
 
-    $stdId 			= $_GET['std_id'];
+    $stdId 			= $_GET['teacher_id'];
 
-	$stddelete  	= "UPDATE student_personal_information SET delete_status = 0 WHERE std_id = '$stdId' ";
+	$stddelete  	= "UPDATE teacher_personal_info SET delete_status = 0 WHERE teacher_id = '$stdId' ";
 	$stdresult      = mysqli_query($con,$stddelete);
 	
 	if($stdresult)
