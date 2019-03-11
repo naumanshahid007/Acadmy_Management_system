@@ -32,24 +32,16 @@ $sql="INSERT INTO student_personal_information(std_name,std_father_name,std_cont
 $result=mysqli_query($con,$sql);
 if ($result) {
 	$last_id = mysqli_insert_id($con);
+	$sql11="INSERT INTO std_fee_details(std_id,subject_id,std_monthly_fee,delete_status) VALUES ($last_id,12,'$std_registeration',2)";
+	$result11=mysqli_query($con,$sql11);
 	for ($i=0; $i <$length ; $i++) { 
 		$sql="INSERT INTO std_fee_details(std_id,subject_id,std_monthly_fee,discount_monthly_fee,net_total) VALUES ('$last_id','$subjects[$i]','$fee[$i]','$discounts[$i]','$fee_after_discount[$i]')";
 		$sql_result=mysqli_query($con,$sql);
 	}
-		if ($sql_result) {
-			$sql1="INSERT INTO std_total_fee(std_id,std_total_fee,std_registeration_fee) VALUES('$last_id','$net_total','$std_registeration')";
-			
-			$sql1_result=mysqli_query($con,$sql1);
-			if ($sql1_result) {
-					echo json_encode($last_id);
-			}
-			else{
-				echo "data is not inserted";
-			}
-		}
-		else{
-			$queryy="Data is not inserted in the database";
-		}
+	if ($sql_result) {
+		echo json_encode($last_id);
+	}
+		
 		
 	
 }

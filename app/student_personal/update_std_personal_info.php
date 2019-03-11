@@ -55,13 +55,16 @@ $studentdata=mysqli_fetch_assoc($data);
           <label>Student Gender</label>
          
           <select name="std_gender" class="form-control">
-          <option value=" <?php echo $studentdata['std_gender']; ?>"> <?php echo $studentdata['std_gender']; ?></option> 
-            <?php if($studentdata['std_gender']=="Male")
-             {?>
-            <option class="Female">Female</option>
-          <?php }else{ ?>
-            <option value="Male">Male</option>
-          <?php } ?>
+          <option value="<?php echo $studentdata['std_gender']; ?>"><?php echo $studentdata['std_gender']; ?></option> 
+            <?php if ($studentdata['std_gender']=='Male') {
+              ?><option value="Female">Female</option><?php }
+              else{
+                ?><option value="Male">Male</option><?php
+              }              
+            
+
+            ?>
+            
           </select>
         </div>
 
@@ -169,7 +172,7 @@ $studentdata=mysqli_fetch_assoc($data);
 
 
     $studentinsert = "UPDATE student_personal_information SET std_name='$std_name',std_father_name = '$std_father_name',std_contact_no = '$std_contact_no',std_email = '$std_email',std_father_contact_no = '$std_father_contact_no',  std_address ='$std_address', std_district = '$std_district',std_tehseel = '$std_tehseel',std_religion = '$std_religion',std_gender='$std_gender' WHERE std_id='$stdId'";
-    
+        
 
     $studentresult   = mysqli_query($con, $studentinsert);
     if($studentresult)
@@ -177,7 +180,7 @@ $studentdata=mysqli_fetch_assoc($data);
         echo "<script type='text/javascript'>window.location='index.php'</script>";
       } 
       else{
-        echo "Not inserted...";
+        echo "Not updated...";
       }
     }
     }
@@ -208,5 +211,8 @@ $studentdata=mysqli_fetch_assoc($data);
 <!-- jQuery 3 -->
 <?php include"../includes/footer.php"; ?>
 
+<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
 

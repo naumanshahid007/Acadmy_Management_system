@@ -14,6 +14,14 @@
   <!-- Bootstrap 3.3.7 -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap3-typeahead.min.js"></script>  
+  <link rel="stylesheet" href="js/bootstrap.min.css" />
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="js/bootstrap-multiselect.css" />
+
   <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
@@ -192,19 +200,15 @@
           </a>
        
         </li>
-        <li class="treeview">
-          <a href="../../#">
+        <li >
+          <a href="../std_enrollment_head/">
             <i class="fa fa-users"></i>
-            <span>Student Enrollment</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-pied-piper-pp"></i> Student Enrollment Head</a></li>
-            <li><a href="../../pages/UI/icons.html"><i class="fa fa-sign-in"></i> Student Enrollment Details</a></li>
+            <span> Student Enrollement</span>
             
-          </ul>
+          </a>
+          
+          </a>
+          
         </li>
         <li class="treeview">
           <a href="../../#">

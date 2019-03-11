@@ -111,7 +111,7 @@
     $subjectrow = mysqli_fetch_assoc($subjectresult);
     $subject_name = $subjectrow['subject_name'];
 
-    $groupInfo = $subject_name.' - '.$group_name.' - ' . date('h:A',strtotime($group_time));
+    $groupInfo = $subject_name.' - '.$group_name.' ('.$group_type.')- ' . date('h:A',strtotime($group_time));
 
     $query_insert = "INSERT INTO groups (group_name, group_type, subject_id, group_description, group_status, group_time, group_start_date, group_end_date,group_info,created_by) VALUES ('$group_name','$group_type','$subject_id','$group_description','$group_status','$group_time','$group_start_date','$group_end_date','$groupInfo','$user')";
 

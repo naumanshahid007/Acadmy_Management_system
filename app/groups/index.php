@@ -18,7 +18,7 @@
                     <th>Group Type</th>
                     <th>Group Time</th>
                     <!-- <th>Group Start Date</th> -->
-                    <!-- <th>Group End Date</th> -->
+                    <th>Group Info</th>
                     <th>Group Status</th>
                     <!-- <th>Group Description</th> -->
                     <th>Action</th>
@@ -40,7 +40,7 @@
                   ?>
                     <tr>
                       
-                      <td><?php error_reporting(0); echo $row['group_name'] ;?></td> 
+                      <td><?php error_reporting(0); echo $row['group_info'] ;?></td> 
                       <td><?php error_reporting(0); echo $showsubject['subject_name']; ?></td>                   
                       <td><?php error_reporting(0); echo $row['group_type'] ;?></td>
                       <td>
@@ -49,7 +49,7 @@
                             echo date('h:i A',strtotime($row['group_time']));
                           ?>
                       </td>
-                      
+                      <td><?php echo $row['group_name'] ;?></td>
                       <td>
                         <?php error_reporting(0); 
                       
@@ -65,8 +65,8 @@
                       </td>
                       
                      
-                      <td><a href="update_group.php?group_id=<?php echo $row['group_id'];?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                        <a href="delete_group.php?group_id=<?php echo $row['group_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this group');"><i class="glyphicon glyphicon-trash"></i> Delete</a></td>
+                      <td><a href="update_group.php?group_id=<?php echo $row['group_id'];?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil" title=" Edit"></i></a>
+                        <a href="delete_group.php?group_id=<?php echo $row['group_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this group');"  title="Delete"><i class="glyphicon glyphicon-trash"></i> </a></td>
                     </tr>
                     <?php
                   }

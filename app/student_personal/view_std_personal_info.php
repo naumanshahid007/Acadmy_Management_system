@@ -38,7 +38,16 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="<?php echo $std["std_picture"]; ?>" alt="User profile picture">
+              <?php 
+                 if ($std['std_picture']) {
+                      $image= $std['std_picture'];
+                    }
+                    else{
+                      $image="uploads/images.png";
+                    }
+                    
+              ?>
+              <img class="profile-user-img img-responsive img-circle" src="<?php echo $image; ?>" alt="User profile picture">
                 <div class="btn-xs" align="center" style="font-size: 15px; border-radius: 10px;"  data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-camera"></i></div>
               <h3 class="profile-username text-center"><?php echo $std["std_name"]; ?></h3>
 
@@ -221,6 +230,7 @@
 
                           <?php
                             $i=1;
+                            $total_fee=0;
                           while ($sub=mysqli_fetch_assoc($subject)) {
                             $idd=$sub['subject_id'];
                             $sql1="SELECT * FROM subjects WHERE subject_id='$idd'";
@@ -238,8 +248,10 @@
                               <td><?php echo $sub["discount_monthly_fee"]; ?></td>
                               <td>
                                 <?php 
+
                                   $fee_after_discount=$sub["std_monthly_fee"]-$sub["discount_monthly_fee"];
                                   echo $fee_after_discount;
+                                  $total_fee=$total_fee+$fee_after_discount;
                                 ?>
                               </td>
                               <td><a href='edit_subject.php?subject_id=<?php echo $sub['std_fee_id']; ?>&&std_id=<?php echo $id; ?>' class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a></td>
@@ -256,7 +268,9 @@
                   <div class="col-md-4">
                     <div class="panel panel-warning">
                     <div class="panel-heading"  style="background-color: #f2bf74;color:white"><h4><b>Total Fee</b></h4></div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body">
+                      <h3>Your Total fee is:<br><?php echo $total_fee; ?></h3>
+                    </div>
                   </div>
                   </div>
                 </div>

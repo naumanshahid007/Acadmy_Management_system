@@ -34,7 +34,16 @@
                   <td><?php echo $showstds['std_name']; ?></td>
                   <td><?php echo $showstds['std_contact_no']; ?></td>
                   <td><?php echo $showstds['std_gender']; ?></td>
-                  <td><a href="<?php  echo $showstds['std_picture'];?>"><img src="<?php  echo $showstds['std_picture'];?>" class="img-circle" width="50px" height="50px"></a></td> 
+                  <?php  
+                    if ($showstds['std_picture']) {
+                      $image= $showstds['std_picture'];
+                    }
+                    else{
+                      $image="uploads/images.png";
+                    }
+                    
+                  ?>
+                  <td><a href="<?php  echo $showstds['std_picture'];?>"><img src="<?php  echo $image;?>" class="img-circle" width="50px" height="50px"></a></td> 
                   <td>
                     <a href="view_std_personal_info.php?std_id=<?php echo $showstds['std_id'];?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-eye-open"></i> View |</a>
                     <a href="update_std_personal_info.php?std_id=<?php echo $showstds['std_id'];?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit |</a>
@@ -87,17 +96,17 @@
         <h4 style="color:#3366FF; margin-left: 30px">Student Personal Information <span style="color: red;font-size: 20px">*</span></font></h4>
         <div class="col-md-4 form-group">
           <label>Student Name</label>
-          <input type="text" name="std_name" class="form-control" required="required" id="std_name"  placeholder="Enter student Name " >
+          <input type="text" name="std_name" class="form-control" required="required" id="std_name"  placeholder="Enter student Name ">
         </div>
 
         <div class="col-md-4 form-group">
           <label>Student Father Name</label>
-          <input type="text" name="std_father_name" class="form-control" id="std_father_name" placeholder="Student Father Name">
+          <input type="text" name="std_father_name" class="form-control" id="std_father_name" placeholder="Student Father Name" required="">
         </div>
         <div class="col-md-4 form-group">
           <label>student Contact</label>
           
-          <input type="text" name="std_contact_no" class="form-control" id="std_contact_no" placeholder="Student Contact No" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
+          <input required="" type="text" name="std_contact_no" class="form-control" id="std_contact_no" placeholder="Student Contact No" data-inputmask='"mask": "+99(999)-9999999"' data-mask>
         </div>
         
        
@@ -109,12 +118,12 @@
 
         <div class="col-md-4 form-group">
           <label>Student father Contact</label>
-          <input type="text" name="std_father_contact_no" class="form-control" id="std_father_contact_no" placeholder="Student father Contact No">
+          <input type="text" required="" name="std_father_contact_no" class="form-control" id="std_father_contact_no" placeholder="Student father Contact No"data-inputmask='"mask": "+99(999)-9999999"' data-mask>
         </div>
 
         <div class="col-md-4 form-group">
           <label>Student Email</label>
-          <input type="email" name="std_email" class="form-control" id="std_email" placeholder="Student Email Address">
+          <input type="email" name="std_email" class="form-control" id="std_email" placeholder="Student Email Address" required="">
         </div>
 
         <div class="col-md-4 form-group">
@@ -134,17 +143,17 @@
         
         <div class="col-md-4 form-group">
           <label>Address</label>
-          <input type="text" name="std_address" class="form-control"  id="std_address" placeholder="Address of the student">
+          <input type="text" name="std_address" class="form-control"  id="std_address" placeholder="Address of the student" required="">
         </div>
 
         <div class="col-md-4 form-group">
           <label>Student District</label>
-          <input type="text" name="std_district" class="form-control" id="std_district" placeholder="Student's district">
+          <input type="text" name="std_district" required="" class="form-control" id="std_district" placeholder="Student's district">
 
         </div>
         <div class="col-md-4 form-group">
           <label>Student Tehseel</label>
-          <input type="text" name="std_tehseel" class="form-control" id="std_tehseel" placeholder="Tehseel of the student">
+          <input type="text" name="std_tehseel" class="form-control" id="std_tehseel" placeholder="Tehseel of the student" required="">
         </div>
         
       </div>
@@ -157,16 +166,16 @@
 
         <div class="col-md-4 form-group">
           <label>Student CNIC</label>
-          <input type="text" name="std_picture" class="form-control" id="std_picture" data-inputmask='"mask": "99999-9999999-9"' data-mask placeholder="Student CNIC No">
+          <input type="text" name="std_picture" class="form-control" id="std_picture" data-inputmask='"mask": "99999-9999999-9"' data-mask placeholder="Student CNIC No" required=""> 
         </div>
 
         <div class="col-md-4 form-group">
           <label>Student Religion</label>
-          <input type="text" name="std_religion" class="form-control" placeholder="Religion of the Islam" id="std_religion">
+          <input type="text" name="std_religion" class="form-control" placeholder="Religion of the Islam" id="std_religion" required="">
         </div>
         <div class="col-md-4 form-group">
           <label> Sttudent Registeration fee</label>
-          <input type="text" class="form-control" name="std_registeration_fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required id="std_registeration_fee">
+          <input type="text" class="form-control" name="std_registeration_fee" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" required id="std_registeration_fee" required="">
         </div>
         
       </div>
@@ -227,7 +236,7 @@
       <div class="row">
 
         <div class="col-md-12">
-          <button type="button" class="btn btn-primary btn-xs" id="submit" name="submit"><i class="glyphicon glyphicon-save" ></i> Save
+          <button type="submit" class="btn btn-primary btn-xs" id="submit" name="submit"><i class="glyphicon glyphicon-save" ></i> Save
           </button>&nbsp;
           <button type="button" class="btn btn-success btn-xs" onclick="insert();dismis()"> Display Subject
           </button>
@@ -393,7 +402,7 @@
                       url: "insert_std.php",
 
                       success: function(result){
-                      alert(result);
+                      //alert(result);
                       window.location="view_std_personal_info.php?std_id="+result;
                       }
                    });

@@ -58,7 +58,7 @@
   
           // Query to fetch all groups from `groups` table
 
-          $groups = "SELECT * FROM  groups WHERE delete_status = 1";
+          $groups = "SELECT * FROM  groups WHERE delete_status = 1 AND assign_status=0";
           $groupsresult = mysqli_query($con,$groups);
 
 
@@ -114,7 +114,17 @@
     $teacherresult   = mysqli_query($con, $teacherinsert);
     if($teacherresult)
       {
-        echo "<script type='text/javascript'>window.location='index.php'</script>";
+        $sql_group="UPDATE groups SET assign_status=1 WHERE group_id='$group_id'";
+        
+
+        $group_result=mysqli_query($con,$sql_group);
+        
+        if ($group_result) {
+          //echo "data is inserted";
+            echo "<script type='text/javascript'>window.location='index.php'</script>";
+        }
+       
+ 
       } 
       else{
         echo "Not inserted...";

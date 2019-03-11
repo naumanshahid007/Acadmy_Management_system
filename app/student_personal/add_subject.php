@@ -31,7 +31,7 @@
           </div>
           <div class="col-md-4 form-group">
             <label>Discount</label>
-            <input type="text" class="form-control" name="discount_monthly_fee" placeholder="Discount" required="" >
+            <input type="text" class="form-control" name="discount_monthly_fee" placeholder="Discount" required="" value="0">
             
           </div>
 
@@ -44,12 +44,7 @@
         
 
   <?php
-  $sql_result1="SELECT *  FROM std_total_fee WHERE std_id='$id'";
-
-  $result1=mysqli_query($con,$sql_result1);
   
-  $row1=mysqli_fetch_assoc($result1);
-  $net=$row1["std_total_fee"];
   if(isset($_POST["submit"]))
     {
 
@@ -58,15 +53,12 @@
       $std_monthly_fee=$_POST["std_monthly_fee"];
       $discount_monthly_fee=$_POST["discount_monthly_fee"];
       $total=$std_monthly_fee-$discount_monthly_fee;
-      $net_total=$net+ $total;
+      
       $sql_insert="INSERT INTO std_fee_details(std_id,subject_id,std_monthly_fee,discount_monthly_fee,net_total) VALUES ('$id','$subject_id','$std_monthly_fee','$discount_monthly_fee','$total')";
       $result=mysqli_query($con,$sql_insert);
       if ($result) {
-        $sql_update="UPDATE std_total_fee SET std_total_fee=$net_total WHERE std_id='$id'";
-        $update_result=mysqli_query($con,$sql_update);
-        if ($update_result) {
-          echo "<script>window.location='view_std_personal_info.php?std_id=$id'</script>";
-        }
+        echo "<script>window.location='view_std_personal_info.php?std_id=$id'</script>";
+        
       }
     	}
 
