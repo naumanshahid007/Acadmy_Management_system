@@ -116,10 +116,10 @@
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
-          <!-- <li>
+          
+          <li>
             <a href="../../#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li> -->
+          </li> 
         </ul>
       </div>
     </nav>
@@ -219,7 +219,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../pages/UI/general.html"><i class="fa fa-money"></i> Fee Vouchar </a></li>
+            <li><a href="../Fee_management/"><i class="fa fa-money"></i> Fee Vouchar</a></li>
+            <li><a href="../Fee_management/"><i class="fa fa-money"></i> Fee Vouchar </a></li>
             
             
           </ul>

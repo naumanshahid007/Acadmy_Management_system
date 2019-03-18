@@ -182,7 +182,7 @@
       <div class="row">
         <h4 style="color:#3366FF; margin-left: 30px">Student Fee Details <span style="color: red;font-size: 20px">*</span></font></h4>
         
-        <div class="col-md-3 form-group">
+        <div class="col-md-4 form-group">
           <label>Subject </label>
           
           <select name="subject_id" class="form-control" id="subject" >
@@ -202,22 +202,18 @@
           </select>
         </div>
         
-        <div class="col-md-3 form-group">
+        <div class="col-md-4 form-group">
           <label> Student Monthly Fee</label>
           <input type="text" class="form-control" name="std_monthly_fee" readonly required id="monthlyFee">
         </div>
-        <div class="col-md-3 form-group">
-          <label>Discount Monthly Fee</label>
-          
-          <input type="text" class="form-control" name="discount_monthly_fee" id="discount_fee" onchange="net_total1()">
-        </div>
-        <div class="col-md-3 form-group">
-          <label> Net Total</label>
-          <input type="text" name="net_total" class="form-control" id="net_total" 
-         readonly="">
-          
-        </div>
+        <div class="col-md-4 form-group">
+          <label>Duration</label>
+          <input type="text" name="duration" class="form-control" id="duration" 
+         >
+
+
       </div>
+    </div>
       
         
     
@@ -228,7 +224,17 @@
      
     
      <div class="row">
-        
+        <div class="col-md-4 form-group">
+          <label>Discount Monthly Fee</label>
+          
+          <input type="text" class="form-control" name="discount_monthly_fee" id="discount_fee"  value="0">
+        </div>
+        <div class="col-md-4 form-group">
+          <label> Net Total</label>
+          <input type="text" name="net_total" class="form-control" id="net_total" 
+         readonly="" onfocus="net_total1()">
+          
+        </div>
         
       </div>
 
@@ -238,7 +244,7 @@
         <div class="col-md-12">
           <button type="submit" class="btn btn-primary btn-xs" id="submit" name="submit"><i class="glyphicon glyphicon-save" ></i> Save
           </button>&nbsp;
-          <button type="button" class="btn btn-success btn-xs" onclick="insert();dismis()"> Display Subject
+          <button type="button" class="btn btn-success btn-xs" onclick="insert();dismis()" id="dispaly_subject"> Display Subject
           </button>
           
           
@@ -256,6 +262,7 @@
           
           <th> Subject Name</th>
           <th> Subject Fee</th>
+          <th>Duration of Subject</th>
           <th>Discount on Subject</th>
         </tr>
       </thead>
@@ -273,21 +280,35 @@
 
       <!-- table start that print the headings and the remaining part of table are defined in the end of this page -->
       <script type="text/javascript">
+        
+
+      </script>
+      <script type="text/javascript">
         let subject=new Array();
         let fee=new Array();
         let discount= new Array();
+        let subject_duration= new Array();
         let fee_after = new Array();
+        
         function insert()
         {
           var subject_name=document.getElementById("subject").value;
           var subject_fee=document.getElementById("monthlyFee").value;
           var discount_fee=document.getElementById("discount_fee").value;
+          var duration=document.getElementById("duration").value;
           var fee_af=subject_fee-discount_fee;
           
-          subject.push(subject_name);
+          
+          if (duration=='' || duration==null) {
+            alert('Duration is required');
+
+          }
+          else{
+            subject.push(subject_name);
           fee.push(subject_fee);
           discount.push(discount_fee);
           fee_after.push(fee_af);
+          subject_duration.push(duration);
           
           let table = document.getElementById("mydata");
           
@@ -298,7 +319,9 @@
           let row = table.insertRow(1);
           row.insertCell(0).innerHTML= subject_name;
           row.insertCell(1).innerHTML= subject_fee ;
-          row.insertCell(2).innerHTML= discount_fee;
+          row.insertCell(2).innerHTML= duration+" Month";
+          row.insertCell(3).innerHTML= discount_fee;
+        }
         }
         let net_total=0;
          function net_total1(){
@@ -320,8 +343,14 @@
   <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
   <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script> 
     <script type="text/javascript">
+    $(document).ready(function(){
+      
+    })
+  </script>
+    <script type="text/javascript">
   
       $(document).ready(function(){
+
   var getFee = 0;
   $('#subject').change(function(){
    var subject_Id = $('#subject').val();
@@ -348,15 +377,19 @@
         $('#monthlyFee').val(i);
         $('#discount_fee').val(i);
         $('#subject').val(i);
+        $('#duration').val(i);
       }
       let subjectArr=subject;
       let feeArr=fee;
       let discountArr=discount;
       let fee_after_discount=fee_after;
+      let subject_duration_Arr=subject_duration;
+
 
   </script>
+
  
-      <script>
+  <script>
               $(document).ready(function(){
                 
                 $('#submit').click(function(){
@@ -377,6 +410,7 @@
                   
                    var net_total=$('#net_total').val();
                   //alert(std_registeration_fee+"Your net total"+net_total);
+                  
                   $.ajax({
                            type:'post',
                            data:{
@@ -396,8 +430,8 @@
                             fee:feeArr,
                             discounts:discountArr,
                             net_total:net_total,
-                            fee_after_discount:fee_after_discount
-
+                            fee_after_discount:fee_after_discount,
+                            subject_duration_Arr:subject_duration_Arr
                       },
                       url: "insert_std.php",
 

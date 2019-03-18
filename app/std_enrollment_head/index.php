@@ -10,7 +10,7 @@
     color: red;
   }
   #view:hover{
-    color: blue;
+    color: darkorange;
   }
 </style>
   <!-- Content Wrapper. Contains page content -->

@@ -274,6 +274,59 @@
                   </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-12">
+                  <?php
+
+                  $sql_result=mysqli_query($con,"SELECT * FROM fee_transaction_head WHERE std_id='$id'");
+                  if (mysqli_num_rows($sql_result)>0) {
+                    ?>
+                        <table class="table table-bordered">
+                          <thead>
+                            
+                            <th>Transection id</th>
+                            <th>Total Amount</th>
+                            <th> Paid Amount </th>
+                            <th>Reamining Amount</th>
+                            <th>Month</th>
+                          </thead>
+                          <tbody>
+                            <?php $i=1;
+                              while($record=mysqli_fetch_assoc($sql_result)){
+                                ?>
+                                <tr>
+                                  <td><b><?php echo $i; ?></b></td>
+                                  <td><?php echo $record["total_amount"]; ?></td>
+                                  <td> <?php echo $record["paid_amount"]; ?></td>
+                                  <td><?php echo $record["remaining_amount"]; ?></td>
+                                  <td><?php echo $record["month"]; ?></td>
+                                </tr>
+                                <?php
+                                $i++;
+                                $amount=$record["remaining_amount"];
+                              }
+                            ?>
+                          </tbody>
+                        </table>
+
+                    <?php
+                    echo "<h3><i>Total Remaining Amount is:  <span class='label label-danger'>$amount</span> Only</i></h3>";
+                  }
+                  else{
+                    $rec_info="<div class='alert alert-danger'>
+                      NO transection is done for Now
+                    </div>";
+                  }
+                  ?>
+                  
+                    <?php 
+                      if (isset($rec_info)) {
+                       echo $rec_info;
+                      }
+
+                    ?>
+                  </div>
+                </div>
               </div>
               <!-- /.tab-pane -->
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2019 at 10:03 AM
+-- Generation Time: Mar 18, 2019 at 05:55 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -55,7 +55,8 @@ INSERT INTO `assign_teacher` (`assign_teacher_id`, `teacher_id`, `class_id`, `gr
 (8, 6, 1, 19, 1, 0, 0, '2019-03-05 07:34:18', '0000-00-00 00:00:00'),
 (9, 6, 1, 19, 1, 0, 0, '2019-03-05 07:35:03', '0000-00-00 00:00:00'),
 (10, 6, 1, 20, 1, 0, 0, '2019-03-05 07:35:11', '0000-00-00 00:00:00'),
-(11, 6, 1, 21, 1, 0, 0, '2019-03-05 07:37:28', '0000-00-00 00:00:00');
+(11, 6, 1, 21, 1, 0, 0, '2019-03-05 07:37:28', '0000-00-00 00:00:00'),
+(12, 9, 1, 23, 1, 0, 0, '2019-03-11 11:24:19', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -122,18 +123,18 @@ INSERT INTO `classes` (`class_id`, `branch_id`, `class_name`, `class_description
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fee_transection_details_id`
+-- Table structure for table `fee_transaction_details`
 --
 
-CREATE TABLE `fee_transection_details_id` (
-  `fee_transection_detail_id` int(11) NOT NULL,
-  `fee_transection_head_id` int(11) NOT NULL,
+CREATE TABLE `fee_transaction_details` (
+  `fee_transaction_detail_id` int(11) NOT NULL,
+  `fee_transaction_head_id` int(11) NOT NULL,
   `subject_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
   `fee` int(11) NOT NULL,
-  `deete_status` int(11) NOT NULL,
+  `delete_status` int(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by` int(11) NOT NULL,
   `updated_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -141,18 +142,34 @@ CREATE TABLE `fee_transection_details_id` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fee_transection_head`
+-- Table structure for table `fee_transaction_head`
 --
 
-CREATE TABLE `fee_transection_head` (
-  `fee_transection_head_id` int(11) NOT NULL,
+CREATE TABLE `fee_transaction_head` (
+  `fee_transaction_head_id` int(11) NOT NULL,
   `std_id` int(11) NOT NULL,
   `std_name` varchar(30) NOT NULL,
   `total_amount` int(11) NOT NULL,
   `paid_amount` int(11) NOT NULL,
   `remaining_amount` int(11) NOT NULL,
+  `month` int(2) NOT NULL,
   `delete_status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fee_transaction_head`
+--
+
+INSERT INTO `fee_transaction_head` (`fee_transaction_head_id`, `std_id`, `std_name`, `total_amount`, `paid_amount`, `remaining_amount`, `month`, `delete_status`) VALUES
+(1, 115, 'Shahzad', 4590, 4000, 590, 0, 1),
+(2, 115, 'shahzad', 4590, 4300, 290, 0, 1),
+(3, 115, 'Shahzad Saeed', 4880, 1600, 3280, 1, 1),
+(4, 115, 'Shahzad Saeed', 7870, 7500, 370, 1, 1),
+(5, 115, 'Shahzad Saeed', 1960, 1600, 360, 2, 1),
+(6, 115, 'Shahzad Saeed', 1950, 200, 1750, 3, 1),
+(8, 115, 'Shahzad Saeed', 1750, 1750, 0, 4, 1),
+(9, 116, 'Saif', 4700, 4700, 0, 1, 1),
+(10, 116, 'Saif', 2700, 2700, 0, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -190,7 +207,7 @@ INSERT INTO `groups` (`group_id`, `subject_id`, `group_name`, `group_type`, `gro
 (20, 8, 'Boys', 'Evening', '18:00', '2019-01-31', '2019-02-28', 'boys', 'Introduction to Computer - Boys - 06:PM', 'Active', 1, 1, 1, 0, '2019-03-05 07:35:11', '0000-00-00 00:00:00'),
 (21, 9, 'Boys', 'Evening', '16:00', '2019-01-30', '2019-02-23', 'boys 3', 'Physics - I - Boys - 01:AM', 'Active', 1, 1, 1, 0, '2019-03-05 07:37:28', '0000-00-00 00:00:00'),
 (22, 10, 'Girls', 'Evening', '18:00', '2019-01-31', '2019-02-23', 'mklmkkk', 'Maths (Trigonometry) - Girls - 06:PM', 'Active', 1, 1, 1, 0, '2019-03-05 07:00:32', '0000-00-00 00:00:00'),
-(23, 10, 'Girls', 'Morning', '05:30', '2019-03-01', '2019-04-30', 'Math', 'Maths (Trigonometry) - Girls (morning)- 05:AM', 'Active', 0, 1, 1, 0, '2019-02-28 10:48:29', '0000-00-00 00:00:00');
+(23, 10, 'Girls', 'Morning', '05:30', '2019-03-01', '2019-04-30', 'Math', 'Maths (Trigonometry) - Girls (morning)- 05:AM', 'Active', 1, 1, 1, 0, '2019-03-11 11:24:19', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -353,6 +370,7 @@ CREATE TABLE `std_fee_details` (
   `delete_status` int(1) NOT NULL DEFAULT '1',
   `net_total` int(11) NOT NULL,
   `enroll_status` int(11) NOT NULL DEFAULT '0',
+  `month_duration` int(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -363,23 +381,54 @@ CREATE TABLE `std_fee_details` (
 -- Dumping data for table `std_fee_details`
 --
 
-INSERT INTO `std_fee_details` (`std_fee_id`, `std_id`, `subject_id`, `std_monthly_fee`, `discount_monthly_fee`, `delete_status`, `net_total`, `enroll_status`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(109, 76, 9, 800, 100, 1, 700, 1, '2019-03-07 14:22:54', 0, '0000-00-00 00:00:00', 0),
-(112, 97, 9, 800, 0, 1, 800, 1, '2019-03-07 12:23:56', 0, '0000-00-00 00:00:00', 0),
-(117, 102, 9, 800, 0, 1, 800, 1, '2019-03-07 14:22:54', 0, '0000-00-00 00:00:00', 0),
-(118, 97, 9, 800, 0, 0, 800, 0, '2019-03-07 12:25:35', 0, '0000-00-00 00:00:00', 0),
-(119, 97, 12, 1000, 0, 1, 0, 0, '2019-03-11 06:01:15', 0, '0000-00-00 00:00:00', 0),
-(120, 103, 12, 2000, 0, 2, 0, 0, '2019-03-11 06:32:59', 0, '0000-00-00 00:00:00', 0),
-(121, 103, 8, 1000, 100, 1, 900, 0, '2019-03-11 06:23:42', 0, '0000-00-00 00:00:00', 0),
-(122, 103, 9, 800, 100, 1, 700, 0, '2019-03-11 06:23:42', 0, '0000-00-00 00:00:00', 0),
-(123, 103, 10, 1200, 0, 1, 1200, 0, '2019-03-11 06:29:46', 0, '0000-00-00 00:00:00', 0),
-(124, 104, 12, 3000, 0, 2, 0, 0, '2019-03-11 06:37:07', 0, '0000-00-00 00:00:00', 0),
-(125, 104, 8, 1000, 100, 1, 900, 0, '2019-03-11 06:37:07', 0, '0000-00-00 00:00:00', 0),
-(126, 104, 9, 800, 100, 1, 700, 0, '2019-03-11 06:37:07', 0, '0000-00-00 00:00:00', 0),
-(127, 105, 12, 4000, 0, 2, 0, 0, '2019-03-11 06:41:20', 0, '0000-00-00 00:00:00', 0),
-(128, 105, 9, 800, 100, 0, 700, 0, '2019-03-11 07:04:57', 0, '0000-00-00 00:00:00', 0),
-(129, 105, 8, 1000, 100, 1, 900, 0, '2019-03-11 06:41:20', 0, '0000-00-00 00:00:00', 0),
-(130, 104, 11, 1000, 0, 0, 1000, 0, '2019-03-11 07:11:59', 0, '0000-00-00 00:00:00', 0);
+INSERT INTO `std_fee_details` (`std_fee_id`, `std_id`, `subject_id`, `std_monthly_fee`, `discount_monthly_fee`, `delete_status`, `net_total`, `enroll_status`, `month_duration`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(109, 76, 9, 800, 100, 1, 700, 1, 0, '2019-03-07 14:22:54', 0, '0000-00-00 00:00:00', 0),
+(112, 97, 9, 800, 0, 1, 800, 1, 0, '2019-03-07 12:23:56', 0, '0000-00-00 00:00:00', 0),
+(117, 102, 9, 800, 0, 1, 800, 1, 0, '2019-03-07 14:22:54', 0, '0000-00-00 00:00:00', 0),
+(118, 97, 9, 800, 0, 0, 800, 0, 0, '2019-03-07 12:25:35', 0, '0000-00-00 00:00:00', 0),
+(119, 97, 12, 1000, 0, 1, 0, 0, 0, '2019-03-11 06:01:15', 0, '0000-00-00 00:00:00', 0),
+(120, 103, 12, 2000, 0, 2, 0, 0, 0, '2019-03-11 06:32:59', 0, '0000-00-00 00:00:00', 0),
+(121, 103, 8, 1000, 100, 1, 900, 0, 0, '2019-03-11 06:23:42', 0, '0000-00-00 00:00:00', 0),
+(122, 103, 9, 800, 100, 1, 700, 0, 0, '2019-03-11 06:23:42', 0, '0000-00-00 00:00:00', 0),
+(123, 103, 10, 1200, 0, 1, 1200, 0, 0, '2019-03-11 06:29:46', 0, '0000-00-00 00:00:00', 0),
+(124, 104, 12, 3000, 0, 2, 0, 0, 0, '2019-03-11 06:37:07', 0, '0000-00-00 00:00:00', 0),
+(125, 104, 8, 1000, 100, 1, 900, 0, 0, '2019-03-11 06:37:07', 0, '0000-00-00 00:00:00', 0),
+(126, 104, 9, 800, 100, 1, 700, 0, 0, '2019-03-11 06:37:07', 0, '0000-00-00 00:00:00', 0),
+(127, 105, 12, 4000, 0, 2, 0, 0, 0, '2019-03-11 06:41:20', 0, '0000-00-00 00:00:00', 0),
+(128, 105, 9, 800, 100, 0, 700, 0, 0, '2019-03-11 07:04:57', 0, '0000-00-00 00:00:00', 0),
+(129, 105, 8, 1000, 100, 1, 900, 0, 0, '2019-03-11 06:41:20', 0, '0000-00-00 00:00:00', 0),
+(130, 104, 11, 1000, 0, 0, 1000, 0, 0, '2019-03-11 07:11:59', 0, '0000-00-00 00:00:00', 0),
+(131, 106, 12, 0, 0, 2, 0, 0, 0, '2019-03-11 15:08:00', 0, '0000-00-00 00:00:00', 0),
+(132, 76, 8, 1000, 0, 1, 1000, 0, 0, '2019-03-12 10:50:01', 0, '0000-00-00 00:00:00', 0),
+(133, 107, 12, 0, 0, 2, 0, 0, 0, '2019-03-13 14:08:39', 0, '0000-00-00 00:00:00', 0),
+(134, 107, 8, 1000, 100, 1, 900, 0, 0, '2019-03-13 14:08:39', 0, '0000-00-00 00:00:00', 0),
+(135, 108, 12, 2000, 0, 2, 2000, 0, 0, '2019-03-13 14:24:27', 0, '0000-00-00 00:00:00', 0),
+(136, 108, 8, 1000, 0, 1, 1000, 0, 0, '2019-03-13 14:24:27', 0, '0000-00-00 00:00:00', 0),
+(137, 108, 9, 800, 100, 1, 700, 0, 0, '2019-03-13 14:24:27', 0, '0000-00-00 00:00:00', 0),
+(138, 109, 12, 0, 0, 2, 0, 0, 0, '2019-03-13 14:25:53', 0, '0000-00-00 00:00:00', 0),
+(139, 109, 8, 1000, 1, 1, 999, 0, 0, '2019-03-13 14:25:53', 0, '0000-00-00 00:00:00', 0),
+(140, 109, 9, 800, 100, 1, 700, 0, 0, '2019-03-13 14:25:53', 0, '0000-00-00 00:00:00', 0),
+(141, 110, 12, 2000, 0, 2, 2000, 0, 0, '2019-03-13 14:28:48', 0, '0000-00-00 00:00:00', 0),
+(142, 110, 8, 1000, 1, 1, 999, 0, 0, '2019-03-13 14:28:48', 0, '0000-00-00 00:00:00', 0),
+(143, 110, 10, 1200, 100, 1, 1100, 0, 0, '2019-03-13 14:28:48', 0, '0000-00-00 00:00:00', 0),
+(144, 111, 12, 2000, 0, 2, 2000, 0, 0, '2019-03-13 17:22:29', 0, '0000-00-00 00:00:00', 0),
+(145, 111, 8, 1000, 1, 1, 999, 0, 2, '2019-03-13 17:22:29', 0, '0000-00-00 00:00:00', 0),
+(146, 111, 10, 1200, 100, 1, 1100, 0, 2, '2019-03-13 17:22:29', 0, '0000-00-00 00:00:00', 0),
+(147, 111, 10, 1200, 100, 1, 1100, 0, 5, '2019-03-13 17:22:29', 0, '0000-00-00 00:00:00', 0),
+(148, 112, 12, 4000, 0, 2, 4000, 0, 0, '2019-03-15 17:29:31', 0, '0000-00-00 00:00:00', 0),
+(149, 112, 8, 1000, 100, 1, 900, 0, 3, '2019-03-15 17:29:31', 0, '0000-00-00 00:00:00', 0),
+(150, 112, 9, 800, 0, 1, 800, 0, 5, '2019-03-15 17:29:31', 0, '0000-00-00 00:00:00', 0),
+(151, 112, 10, 1200, 100, 1, 1100, 0, 5, '2019-03-15 17:29:31', 0, '0000-00-00 00:00:00', 0),
+(152, 112, 11, 1000, 100, 1, 900, 0, 3, '2019-03-15 17:32:52', 0, '0000-00-00 00:00:00', 0),
+(153, 113, 12, 0, 0, 2, 0, 0, 1, '2019-03-15 17:56:08', 0, '0000-00-00 00:00:00', 0),
+(154, 114, 12, 0, 0, 2, 0, 0, 1, '2019-03-15 17:56:09', 0, '0000-00-00 00:00:00', 0),
+(155, 115, 12, 3000, 0, 2, 3000, 0, 1, '2019-03-15 17:57:05', 0, '0000-00-00 00:00:00', 0),
+(156, 115, 9, 800, 10, 1, 790, 0, 3, '2019-03-15 17:57:06', 0, '0000-00-00 00:00:00', 0),
+(157, 115, 9, 800, 0, 1, 800, 0, 3, '2019-03-15 17:57:06', 0, '0000-00-00 00:00:00', 0),
+(158, 116, 12, 2000, 0, 2, 2000, 0, 1, '2019-03-18 04:43:28', 0, '0000-00-00 00:00:00', 0),
+(159, 116, 9, 800, 100, 1, 700, 0, 3, '2019-03-18 04:43:28', 0, '0000-00-00 00:00:00', 0),
+(160, 116, 11, 1000, 100, 1, 900, 0, 3, '2019-03-18 04:43:28', 0, '0000-00-00 00:00:00', 0),
+(161, 116, 10, 1200, 100, 1, 1100, 0, 3, '2019-03-18 04:43:28', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -413,16 +462,10 @@ CREATE TABLE `student_personal_information` (
 --
 
 INSERT INTO `student_personal_information` (`std_id`, `std_name`, `std_contact_no`, `std_father_name`, `std_father_contact_no`, `std_gender`, `std_email`, `std_picture`, `std_address`, `std_district`, `std_tehseel`, `std_religion`, `std_cnic`, `delete_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(76, 'Muhammad Saif Ur Rehman', '03083152045', 'Arishad Iqbal', '03063772106', 'Male', 'saif@gmail.com', 'uploads/download.jpg', 'Rahim yar khan', 'Rykhan', 'Sdk', 'Islam', '3130325521445', 1, 0, 0, '2019-02-26 06:18:54', '0000-00-00 00:00:00'),
-(77, 'Anas Shafqat', '03063772105', 'Shafqat Ali ', '03063772105', 'Male', 'anasshafqat01@gmail.com', 'uploads/download (4).jpg', 'Gulshan Iqbal Rahim yar khan', 'Rahim yar khan', 'Rahim yar khan', 'Islam', '3130335221445', 1, 0, 0, '2019-02-26 09:40:52', '0000-00-00 00:00:00'),
-(97, 'Muhammad Saif Ur Rehman', '03083152045', 'Arishad Iqbal', '03083152045', 'Male', 'saif123@gmail.com', 'uploads/download (1).jpg', 'Rahim yar khan', 'Rykhan', 'Sdk', 'Islam', '3130325521445', 1, 0, 0, '2019-03-11 07:13:07', '0000-00-00 00:00:00'),
-(98, 'Saif Rehman', '', '', '', 'Male', '', '', '', '', '', '', '', 0, 0, 0, '2019-02-26 10:05:39', '0000-00-00 00:00:00'),
-(100, 'Saif ullah', '', '', '', 'Male', '', '', '', '', '', '', '', 0, 0, 0, '2019-02-26 10:08:09', '0000-00-00 00:00:00'),
-(101, 'Saif ullah', '', '', '', 'Male', '', '', '', '', '', '', '', 0, 0, 0, '2019-02-26 10:08:12', '0000-00-00 00:00:00'),
-(102, 'Saif ', '212213212313', 'Arshad', '321315612', 'Female', 'shahzad@gmail.com', 'uploads/desktop.PNG', 'alksdfjkldjf', 'alksjdfkl', 'laksdjfkldj', 'lakfdj', '', 1, 0, 0, '2019-03-11 07:36:22', '0000-00-00 00:00:00'),
-(103, 'Nauman Hashmi', '+92(306)-377210', 'abc', '+92(306)-377210', 'Female', 'Nuaman@gmail.com', 'uploads/download.jpg', 'Jugnoo Chock', 'Rahim Yar Khan', 'Rahim Yar Khan', 'Islam', '31303-6652225-4', 1, 0, 0, '2019-03-11 07:37:25', '0000-00-00 00:00:00'),
-(104, 'Shahzad', '+92(341)-701141', 'Saeed', '+92(307)-359933', 'Female', 'shahzad@gmail.com', 'uploads/download.jpg', 'RahimYar khan', 'RahimYar khan', 'RahimYar khan', 'islam', '31021-5132132-1', 1, 0, 0, '2019-03-11 07:36:59', '0000-00-00 00:00:00'),
-(105, 'Muhammad Abbas', '+92(308)-375481', 'Saeed', '+94(387)-523948', 'Male', 'abbas@gmail.com', 'uploads/download.jpg', 'ryk', 'ryk', 'Rahim Yar Khan', 'Islam', '43894-7598347-5', 1, 0, 0, '2019-03-11 07:27:23', '0000-00-00 00:00:00');
+(113, 'Shahzad', '+32(321)-321213', 'abc', '+32(132)-132132', 'Male', 'shahzad@gmail.com', '', 'RahimYar khan', 'Rahim Yar Khan', 'Rahim Yar Khan', '', '', 1, 0, 0, '2019-03-15 17:56:08', '0000-00-00 00:00:00'),
+(114, 'Shahzad', '+32(321)-321213', 'abc', '+32(132)-132132', 'Male', 'shahzad@gmail.com', '', 'RahimYar khan', 'Rahim Yar Khan', 'Rahim Yar Khan', '', '', 1, 0, 0, '2019-03-15 17:56:08', '0000-00-00 00:00:00'),
+(115, 'Shahzad Saeed', '+32(321)-321213', 'abc', '+32(132)-132132', 'Male', 'shahzad@gmail.com', '', 'RahimYar khan', 'Rahim Yar Khan', 'Rahim Yar Khan', 'Islam', '33321-3213213-2', 1, 0, 0, '2019-03-16 17:55:31', '0000-00-00 00:00:00'),
+(116, 'Saif', '+68(798)-79878_', 'saif', '+54(687)-878798', 'Female', 'shahzad@gmail.com', '', 'RahimYar khan', 'Rahim Yar Khan', 'Rahim Yar Khan', 'Islam', '54465-4564654-6', 1, 0, 0, '2019-03-18 04:43:28', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -519,10 +562,19 @@ ALTER TABLE `classes`
   ADD KEY `branch_id` (`branch_id`);
 
 --
--- Indexes for table `fee_transection_head`
+-- Indexes for table `fee_transaction_details`
 --
-ALTER TABLE `fee_transection_head`
-  ADD PRIMARY KEY (`fee_transection_head_id`),
+ALTER TABLE `fee_transaction_details`
+  ADD PRIMARY KEY (`fee_transaction_detail_id`),
+  ADD KEY `fee_transection_head_id` (`fee_transaction_head_id`),
+  ADD KEY `group_id` (`group_id`),
+  ADD KEY `subject_id` (`subject_id`);
+
+--
+-- Indexes for table `fee_transaction_head`
+--
+ALTER TABLE `fee_transaction_head`
+  ADD PRIMARY KEY (`fee_transaction_head_id`),
   ADD KEY `std_id` (`std_id`);
 
 --
@@ -596,7 +648,7 @@ ALTER TABLE `teacher_personal_info`
 -- AUTO_INCREMENT for table `assign_teacher`
 --
 ALTER TABLE `assign_teacher`
-  MODIFY `assign_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `assign_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `branches`
@@ -611,10 +663,16 @@ ALTER TABLE `classes`
   MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `fee_transection_head`
+-- AUTO_INCREMENT for table `fee_transaction_details`
 --
-ALTER TABLE `fee_transection_head`
-  MODIFY `fee_transection_head_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `fee_transaction_details`
+  MODIFY `fee_transaction_detail_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `fee_transaction_head`
+--
+ALTER TABLE `fee_transaction_head`
+  MODIFY `fee_transaction_head_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `groups`
@@ -650,13 +708,13 @@ ALTER TABLE `std_enrollment_head`
 -- AUTO_INCREMENT for table `std_fee_details`
 --
 ALTER TABLE `std_fee_details`
-  MODIFY `std_fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `std_fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT for table `student_personal_information`
 --
 ALTER TABLE `student_personal_information`
-  MODIFY `std_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `std_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT for table `subjects`
@@ -694,10 +752,18 @@ ALTER TABLE `classes`
   ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`branch_id`);
 
 --
--- Constraints for table `fee_transection_head`
+-- Constraints for table `fee_transaction_details`
 --
-ALTER TABLE `fee_transection_head`
-  ADD CONSTRAINT `fee_transection_head_ibfk_1` FOREIGN KEY (`std_id`) REFERENCES `student_personal_information` (`std_id`);
+ALTER TABLE `fee_transaction_details`
+  ADD CONSTRAINT `fee_transaction_details_ibfk_1` FOREIGN KEY (`fee_transaction_head_id`) REFERENCES `fee_transaction_head` (`fee_transaction_head_id`),
+  ADD CONSTRAINT `fee_transaction_details_ibfk_2` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`),
+  ADD CONSTRAINT `fee_transaction_details_ibfk_3` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`);
+
+--
+-- Constraints for table `fee_transaction_head`
+--
+ALTER TABLE `fee_transaction_head`
+  ADD CONSTRAINT `fee_transaction_head_ibfk_1` FOREIGN KEY (`std_id`) REFERENCES `student_personal_information` (`std_id`);
 
 --
 -- Constraints for table `groups`
