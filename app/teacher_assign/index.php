@@ -44,7 +44,7 @@
                 $showclass = mysqli_fetch_assoc($classresult);
 
                 // Query to display `group info` from `groups` by selected `groupID`
-                $group_name = "SELECT group_info FROM groups WHERE group_id = '$groupID' AND delete_status = 1";
+                $group_name = "SELECT group_info,group_id FROM groups WHERE group_id = '$groupID' AND delete_status = 1";
                 $groupresult = mysqli_query($con,$group_name);
                 $showgroupinfo = mysqli_fetch_assoc($groupresult);
 
@@ -58,7 +58,7 @@
                   <td>
                     
                     <a href="update_teacher_assign.php?teacher_assign_id=<?php echo $showteachers['assign_teacher_id'];?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit |</a>
-                    <a href="delete_teacher_assign.php?teacher_assign_id=<?php echo $showteachers['assign_teacher_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the assign teacher');"><i class="glyphicon glyphicon-trash"></i> Delete |</a>
+                    <a href="delete_teacher_assign.php?teacher_assign_id=<?php echo $showteachers['assign_teacher_id'];?>&&group_id=<?php echo $showgroupinfo['group_id'];?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the assign teacher');"><i class="glyphicon glyphicon-trash"></i> Delete |</a>
                   </td>
 
                   </tr>
