@@ -16,17 +16,16 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">stds Personal Details</h3>
+    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">Students Enrollment Details</h3>
 
     <!-- Main content -->
 <div class="box-body well"  style="border-top:1px solid #3c8dbc;">
-  <button class="btn btn-success btn-xs" style="font-size: 15px; border-radius: 10px;"  data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus-sign"></i> Create stdudent</button><hr>
+  <button class="btn btn-success btn-xs" style="font-size: 15px; border-radius: 10px;"  data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus-sign"></i>Enroll stdudent</button><hr>
     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Sr #</th>
                     <th>Group Info</th>
-                    
                     <th>Teacher Name</th>
                     <th>Action</th>
                   </tr>
@@ -163,7 +162,7 @@
         $sql_detail="INSERT INTO std_enrollment_details(std_enrollment_head_id,std_id,std_name,created_by) VALUES ('$last_id','$std','$std_name','$user')";
         $sql_detail_result=mysqli_query($con,$sql_detail);
         if ($sql_detail_result) {
-          $sql_group="UPDATE std_fee_details SET enroll_status=1 WHERE std_id='$std'";
+          $sql_group="UPDATE std_fee_details SET enroll_status=1 WHERE std_id='$std' AND subject_id=$subject_id";
         $group_result=mysqli_query($con,$sql_group);
         
         if ($group_result) {

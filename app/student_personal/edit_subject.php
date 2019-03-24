@@ -28,7 +28,7 @@
             <label>Subject Name</label>
             <select name="subject_id" id="subject" class="form-control">
             	<option value="<?php echo $row['subject_id'] ?>"><?php echo $row1["subject_name"] ?></option>
-            <option>--Select Subject--</option>
+            <option disabled="">--Select Subject--</option>
             <?php 
             	$sql="SELECT * FROM subjects WHERE delete_status=1";
             	$sql_result=mysqli_query($con,$sql);
@@ -56,6 +56,13 @@
           </div>
 
         </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label> Duration</label>
+            <input type="text" name="duration" value="<?php echo $row["month_duration"]; ?>"  class="form-control"> 
+          </div>
+        </div>
+        <br>
         
       <div class="row">
         <div class="col-md-4">
@@ -66,22 +73,21 @@
   		<?php 
   			if (isset($_POST["submit"])) {
   				$subj=$_POST["subject_id"];
+          $duration=$_POST["duration"];
 		  		$std_monthly_fee=$_POST["std_monthly_fee"];
 		  		$discount_monthly_fee=$_POST["discount_monthly_fee"];
 		  		$ab=$std_monthly_fee-$discount_monthly_fee;
 
 		  		$ac=$a+$ab;
 		  		//echo $subj."<br>".$std_monthly_fee."<br>".$discount_monthly_fee."<br>".$ab."<br>".$ac;
-		  		$sql11="UPDATE std_fee_details SET subject_id='$subj',std_monthly_fee='$std_monthly_fee',discount_monthly_fee='$discount_monthly_fee' , net_total='$ab' WHERE std_fee_id='$subject'";
+		  		$sql11="UPDATE std_fee_details SET subject_id='$subj',std_monthly_fee='$std_monthly_fee',discount_monthly_fee='$discount_monthly_fee' , net_total='$ab',month_duration ='$duration' WHERE std_fee_id='$subject'";
 		  		$result12=mysqli_query($con,$sql11);
 		  		if ($result12) {
-		  			$sql2update="UPDATE std_total_fee SET std_total_fee='$ac' WHERE std_id='$id'";
-		  			$updateresult=mysqli_query($con,$sql2update);
-		  			if ($updateresult) {
+		  			
 		  				echo"<script>window.location='view_std_personal_info.php?std_id=$id'</script>";
 		  			}
 		  		}
-  			}
+  			
   		?>
 </div>
       </div>

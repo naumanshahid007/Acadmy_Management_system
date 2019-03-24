@@ -48,7 +48,7 @@
                     
               ?>
               <img class="profile-user-img img-responsive img-circle" src="<?php echo $image; ?>" alt="User profile picture">
-                <div class="btn-xs" align="center" style="font-size: 15px; border-radius: 10px;"  data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-camera"></i></div>
+                <div class="btn-xs" align="center" style="font-size: 15px; border-radius: 10px;"  data-toggle="modal" data-target="#myModal" title="Upload Profile Picture"><i class="glyphicon glyphicon-camera"></i></div>
               <h3 class="profile-username text-center"><?php echo $std["std_name"]; ?></h3>
 
               
@@ -220,6 +220,7 @@
                                 <th class="text-center">Sr # No</th>
                                 <th class="text-center">Subject Name</th>
                                 <th class="text-center">Subject Fee</th>
+                                <th class="text-center" >Duration</th>
                                 <th class="text-center" >Discount</th>
                                 <th class="text-center" >Fee After Discount</th>
                                 <th class="text-center">Action</th>
@@ -245,6 +246,7 @@
 
                               <td><?php echo $results["subject_name"]; ?></td>
                               <td><?php echo $sub["std_monthly_fee"]; ?></td>
+                              <td><?php echo $sub["month_duration"]; ?></td>
                               <td><?php echo $sub["discount_monthly_fee"]; ?></td>
                               <td>
                                 <?php 
