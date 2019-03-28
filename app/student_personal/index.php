@@ -15,6 +15,7 @@
                     <th>Student  Name</th>
                     <th>Student Contact No</th>
                     <th>Student Gender</th>
+                    <th>Remaining Amount</th>
                     <th>Student Photo</th>
                     <th>Action</th>
                   </tr>
@@ -28,12 +29,26 @@
                 $studentresult     = mysqli_query($con,$students);
                 $srNo = 1;
                 while ($showstds = mysqli_fetch_assoc($studentresult)) {  
+                  $std_idd=$showstds["std_id"];
+                  $sql_remain="SELECT remaining_amount FROM fee_transaction_head WHERE std_id=$std_idd";
+                  $reamin_result=mysqli_query($con,$sql_remain);
+                  $rowss=mysqli_num_rows($reamin_result);
+                  while ($rows_affected=mysqli_fetch_assoc($reamin_result)) {
+                    $remain=$rows_affected["remaining_amount"];
+                    if ($remain==0) {
+                      $color="label label-success";
+                      $remain="OK";
+                    }
+                    else
+                      $color="label label-danger";
+                  }
                 ?>
                   <tr>
                   <td><?php echo $srNo; ?></td>
                   <td><?php echo $showstds['std_name']; ?></td>
                   <td><?php echo $showstds['std_contact_no']; ?></td>
                   <td><?php echo $showstds['std_gender']; ?></td>
+                  <td><span class="<?php echo $color; ?>"><?php echo $remain; ?> </span></td>
                   <?php  
                     if ($showstds['std_picture']) {
                       $image= $showstds['std_picture'];
