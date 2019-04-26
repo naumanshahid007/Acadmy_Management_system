@@ -186,7 +186,7 @@
 
         <div class="col-md-4 form-group">
           <label>Student Religion</label>
-          <input type="text" name="std_religion" class="form-control" placeholder="Religion of the Islam" id="std_religion" required="">
+          <input type="text" name="std_religion" class="form-control" placeholder="Religion of the Student" id="std_religion" required="">
         </div>
         <div class="col-md-4 form-group">
           <label> Sttudent Registeration fee</label>

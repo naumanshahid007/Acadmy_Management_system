@@ -213,7 +213,7 @@
         //alert(len);
             var option = "";
             $('#std').empty();
-            $('#std').append("<option disabled>"+""+"</option>");
+            $('#std').append("<option >"+""+"</option>");
             for(var i=0; i<len; i++)
             {
             var stdId = jsonResult[0][i];

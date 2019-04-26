@@ -47,8 +47,8 @@
             <option value="<?php echo $teacherid; ?>"><?php echo $teacherName; ?></option>
 
             <?php 
-            while($showclasses = mysqli_fetch_assoc($teachersresult)){ ?>
-            <option value="<?php echo $showteachers['teacher_id']; ?>"><?php echo $showteachers['teacher_name']; ?></option>
+            while($showteach = mysqli_fetch_assoc($teachersresult)){ ?>
+            <option value="<?php echo $showteach['teacher_id']; ?>"><?php echo $showteach['teacher_name']; ?></option>
             <?php }?>
           </select>
         </div>
@@ -98,6 +98,18 @@
           </div>
         </div>
       </form>
+      <?php
+        if (isset($_POST["submit"])) {
+          $teacher_id=$_POST["teacher_id"];
+          $class_id=$_POST["class_id"];
+          $group_id=$_POST["group_id"];
+          
+          $sql_result=mysqli_query($con,"UPDATE assign_teacher SET teacher_id=$teacher_id,class_id='$class_id',group_id=$group_id WHERE assign_teacher_id=$assign_teacher_id"); 
+          if ($sql_result) {
+            echo "<script> window.location='index.php'</script>";
+          }
+          }
+      ?>
       </div>
 
 
@@ -106,36 +118,7 @@
 
 
 
-  <?php
-    if(isset($_POST["submit"]))
-    {
-      $group_name         = $_POST["group_name"];
-      $group_type         = $_POST["group_type"];
-      $group_status       = $_POST["group_status"];
-      $group_time         = $_POST["group_time"];
-      $subject_id         =$_POST["subject_id"];
-      $group_description  = $_POST["group_description"];
-      $group_start_date   = $_POST["group_start_date"];
-      $group_end_date     = $_POST["group_end_date"];
-      $updated_at         =date("d/m/Y");
-
-      $subjectss = "SELECT subject_name FROM subjects WHERE subject_id = '$subject_id' AND delete_status = 1";
-      $subjectresult = mysqli_query($con,$subjectss);
-      $subjectrow = mysqli_fetch_assoc($subjectresult);
-      $subject_name = $subjectrow['subject_name'];
-
-      $groupInfo = $subject_name.' - '.$group_name.' - ' . date('h:A',strtotime($group_time));
-      
-      $query_update = "UPDATE groups SET group_start_date = '$group_start_date', group_end_date = '$group_end_date', group_info = '$groupInfo', group_name = '$group_name', group_type = '$group_type', group_description = '$group_description', group_status = '$group_status', group_time = '$group_time', updated_at ='$update_at', subject_id = '$subject_id' WHERE group_id = '$id'";
-      $result   = mysqli_query($con,$query_update);
-      if($result)
-        {
-          echo "<script type='text/javascript'>window.location='index.php'</script>";
-        } 
-      }
-
-
-  ?>
+ 
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->

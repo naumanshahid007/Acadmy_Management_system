@@ -67,7 +67,7 @@
       <div class="row">
         <div class="col-md-4">
         <button type="submit" class="btn btn-primary btn-xs" name="submit"><i class="glyphicon glyphicon-save"></i> Save</button>&nbsp;
-        <a href="index.php" title="Go to main page" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+        <a href="view_std_personal_info.php?std_id=<?php echo $id; ?>" title="Go to main page" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
         
 
   		<?php 

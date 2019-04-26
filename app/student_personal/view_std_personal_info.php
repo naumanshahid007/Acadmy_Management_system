@@ -246,7 +246,7 @@
 
                               <td><?php echo $results["subject_name"]; ?></td>
                               <td><?php echo $sub["std_monthly_fee"]; ?></td>
-                              <td><?php echo $sub["month_duration"]; ?></td>
+                              <td><?php echo $sub["month_duration"]; ?> Month</td>
                               <td><?php echo $sub["discount_monthly_fee"]; ?></td>
                               <td>
                                 <?php 
