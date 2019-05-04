@@ -4,6 +4,9 @@
   $std_per="SELECT * FROM student_personal_information WHERE std_id='$id'";
   $result=mysqli_query($con,$std_per);
   $std=mysqli_fetch_assoc($result);
+  if ($std["delete_status"]==0) {
+   echo "<script> window.location='index.php'</script>";
+  }
 
 ?>
 <style type="text/css" media="screen">

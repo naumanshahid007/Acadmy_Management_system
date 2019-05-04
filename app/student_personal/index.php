@@ -3,7 +3,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container-fluid">
-    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">stds Personal Details</h3>
+    <h3 class="well well-sm" style="border-radius:10px;font-weight: bolder; background-color: #3c8dbc; color: white; text-align: center;">Students Personal Details</h3>
 
     <!-- Main content -->
 <div class="box-body well"  style="border-top:1px solid #3c8dbc;">
